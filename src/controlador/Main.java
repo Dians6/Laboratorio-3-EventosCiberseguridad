@@ -9,7 +9,7 @@ import modelo.EventoSeguridad;
 import modelo.EventoIntrusion;
 import java.util.InputMismatchException;
 import java.util.Scanner;
-
+//DDD
 
 public class Main {
 
