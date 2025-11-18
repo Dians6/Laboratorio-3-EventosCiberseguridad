@@ -3,8 +3,10 @@ Michelangeli
 Feng
 Ferrera
 */
-package laboratorioevaluado;
+package controlador;
 
+import modelo.EventoSeguridad;
+import modelo.EventoIntrusion;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
