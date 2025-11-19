@@ -71,19 +71,29 @@ public class EventoIntrusion extends EventoSeguridad{
         }
     }
     */
-    public void GenerarReporte(boolean eResumido, JLabel ID, JLabel amenaza, JLabel descripcionJ, JLabel fecha, JLabel intentos, JLabel ptoAcceso){
+    public void GenerarReporteBasico(JLabel ID, JLabel amenaza, JLabel descripcionJ, JLabel fecha, JLabel intentos, JLabel ptoAcceso){
         ID.setText(idEvento);
         amenaza.setText(tipoAmenaza);
         descripcionJ.setText(descripcion);
-        System.out.println("Fecha de Deteccion: "+fechaDeteccion);
-        System.out.println("Direccion IP o sistema desde donde se origino la intrusion: "+puntoAcceso);
-        System.out.println("Numero de intentos de acceso no autorizados: "+intentosAcceso);
-        System.out.println("---------------------------------------------------------");
+        fecha.setText(fechaDeteccion.toString());
+        ptoAcceso.setText(puntoAcceso);
+        intentos.setText(String.valueOf(intentosAcceso));
+        
     }
 
-    public void GenerarReporte(){
-        System.out.println("Direccion IP o sistema desde donde se origino la intrusion: "+puntoAcceso);
-        System.out.println("Numero de intentos de acceso no autorizados: "+intentosAcceso);
+    public void GenerarReporteDetallado(JLabel ID, JLabel amenaza, JLabel descripcionJ, JLabel fecha, JLabel intentos, JLabel ptoAcceso, JLabel nivel, JLabel persistencia){
+        ID.setText(idEvento);
+        amenaza.setText(tipoAmenaza);
+        switch (nivelRiesgo){
+            case 1->nivel.setText("Amenaza Leve");
+            case 2->nivel.setText("Amenaza Moderada");
+            case 3->nivel.setText("Amenaza Critica");
+            default->nivel.setText("Sin amenaza detectada");
+        }
+        fecha.setText(fechaDeteccion.toString());
+        descripcionJ.setText(descripcion);
+        ptoAcceso.setText(puntoAcceso);
+        intentos.setText(String.valueOf(intentosAcceso));
 
         String nivelPersis = "";
         if ((intentosAcceso >= 1) && (intentosAcceso <= 5)){
@@ -95,8 +105,7 @@ public class EventoIntrusion extends EventoSeguridad{
         if (intentosAcceso > 15){
             nivelPersis = "Amenaza Persistente Avanzada";
         }
-        System.out.println("Nivel de persistencia basado en intentos de acceso: "+nivelPersis);
-        System.out.println("---------------------------------------------------------");
+        persistencia.setText(nivelPersis);
 
     }
    

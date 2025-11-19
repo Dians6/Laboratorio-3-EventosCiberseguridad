@@ -75,13 +75,13 @@ public class EventoSeguridad {
     }
     
     
-    public void GenerarReporte(boolean esResumido,JLabel ID, JLabel amenaza, JLabel descripcionJ){
+    public void GenerarReporteBasico(JLabel ID, JLabel amenaza, JLabel descripcionJ){
         ID.setText(idEvento);
         amenaza.setText(tipoAmenaza);
         descripcionJ.setText(descripcion);
     }
     
-    public void GenerarReporte(JLabel ID, JLabel amenaza, JLabel nivel, JLabel fecha, JLabel descripcionJ){
+    public void GenerarReporteDetallado(JLabel ID, JLabel amenaza, JLabel nivel, JLabel fecha, JLabel descripcionJ){
         ID.setText(idEvento);
         amenaza.setText(tipoAmenaza);
         switch (nivelRiesgo){
