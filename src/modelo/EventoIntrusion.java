@@ -8,6 +8,8 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.time.format.ResolverStyle;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
 public class EventoIntrusion extends EventoSeguridad{
     private String puntoAcceso;
@@ -25,26 +27,25 @@ public class EventoIntrusion extends EventoSeguridad{
     }
     
     public EventoIntrusion() {
-        //super();
+        super();
         puntoAcceso = "N/A";
         intentosAcceso = 0;
         usuarioAfectado = "N/A";
     }
     
-    @Override
-    public void leerDatos() {
-        super.leerDatos();
-        puntoAcceso = validarCadena("Introduzca la direccion IP asignada: ","Error: IP invalido. Solo se permiten letras, números, espacios y ciertos signos de puntuación (1-250 caracteres).","^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑüÜ\\s.',-]{1,250}$");
-        intentosAcceso = validarEntero("Ingrese los intentos de acceso hacia el usuario (maximo 20): ", "Error: el numero debe ser del 1 al 20.",1,20);
-        usuarioAfectado = validarCadena("Introduzca el nombre del usuario afectado: ","Error: Titulo invalido. Solo se permiten letras, números, espacios y ciertos signos de puntuación (1-250 caracteres).","^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑüÜ\\s.',-]{1,250}$");
-    }
-    
     public void bloquearPuntoAcceso() {
-        System.out.println("---BLOQUEANDO IP DEL USUARIO---");
-        System.out.println("!!! IP BLOQUEADA !!!");
-        
+        int confirmar = JOptionPane.showConfirmDialog(null, "¿Deseas bloquear la IP del usuario?","Confirmacion",JOptionPane.YES_NO_CANCEL_OPTION);
+        boolean bloqueado;
+        if (confirmar == JOptionPane.YES_OPTION){
+            bloqueado = true;
+            JOptionPane.showMessageDialog(null,"IP BLOQUEADA" , "Bloquear punto de acceso concedido", JOptionPane.INFORMATION_MESSAGE); 
+        }
+        else if (confirmar == JOptionPane.NO_OPTION || confirmar == JOptionPane.CANCEL_OPTION || confirmar == JOptionPane.CLOSED_OPTION) {
+            bloqueado = false;
+        }
     }
     
+    /*
     public void aislarSistema() {
         System.out.println("---PROTOCOLO DE AISLAMIENTO DEL SISTEMA---");
         System.out.println("Se ha detectado una amenaza en su sistema, desea aislarlo?");
@@ -55,8 +56,8 @@ public class EventoIntrusion extends EventoSeguridad{
         } else {
             System.out.println("!!! ACCION CANCELADA !!!");
         }
-    }
-    
+    }*/
+    /*
     public void notificarAdministrador() {
         System.out.println("---ANALIZANDO ALTERACIONES EN LA CUENTA DEL USUARIO...---");
         System.out.println("NIVEL DE RIESGO HACIA EL USUARIO:"+ nivelRiesgo);
@@ -69,34 +70,42 @@ public class EventoIntrusion extends EventoSeguridad{
             System.out.println("No hay riesgo para aislar el sistema.");
         }
     }
-    
-    @Override
-    public void GenerarReporte(boolean eResumido){
-         super.GenerarReporte(eResumido);
-         System.out.println("Fecha de Deteccion: "+fechaDeteccion);
-         System.out.println("Direccion IP o sistema desde donde se origino la intrusion: "+puntoAcceso);
-         System.out.println("Numero de intentos de acceso no autorizados: "+intentosAcceso);
-         System.out.println("---------------------------------------------------------");
+    */
+    public void GenerarReporteBasico(JLabel ID, JLabel amenaza, JLabel descripcionJ, JLabel fecha, JLabel intentos, JLabel ptoAcceso){
+        ID.setText(idEvento);
+        amenaza.setText(tipoAmenaza);
+        descripcionJ.setText(descripcion);
+        fecha.setText(fechaDeteccion.toString());
+        ptoAcceso.setText(puntoAcceso);
+        intentos.setText(String.valueOf(intentosAcceso));
+        
     }
 
-    @Override
-    public void GenerarReporte(){
-         super.GenerarReporte();
-         System.out.println("Direccion IP o sistema desde donde se origino la intrusion: "+puntoAcceso);
-         System.out.println("Numero de intentos de acceso no autorizados: "+intentosAcceso);
+    public void GenerarReporteDetallado(JLabel ID, JLabel amenaza, JLabel descripcionJ, JLabel fecha, JLabel intentos, JLabel ptoAcceso, JLabel nivel, JLabel persistencia){
+        ID.setText(idEvento);
+        amenaza.setText(tipoAmenaza);
+        switch (nivelRiesgo){
+            case 1->nivel.setText("Amenaza Leve");
+            case 2->nivel.setText("Amenaza Moderada");
+            case 3->nivel.setText("Amenaza Critica");
+            default->nivel.setText("Sin amenaza detectada");
+        }
+        fecha.setText(fechaDeteccion.toString());
+        descripcionJ.setText(descripcion);
+        ptoAcceso.setText(puntoAcceso);
+        intentos.setText(String.valueOf(intentosAcceso));
 
-         String nivelPersis = "";
-         if ((intentosAcceso >= 1) && (intentosAcceso <= 5)){
-             nivelPersis = "Exploracion";
-         }
-         if ((intentosAcceso >= 6) && (intentosAcceso <= 15)){
-             nivelPersis = "Ataque Coordinado";
-         }
-         if (intentosAcceso > 15){
-             nivelPersis = "Amenaza Persistente Avanzada";
-         }
-         System.out.println("Nivel de persistencia basado en intentos de acceso: "+nivelPersis);
-         System.out.println("---------------------------------------------------------");
+        String nivelPersis = "";
+        if ((intentosAcceso >= 1) && (intentosAcceso <= 5)){
+            nivelPersis = "Exploracion";
+        }
+        if ((intentosAcceso >= 6) && (intentosAcceso <= 15)){
+            nivelPersis = "Ataque Coordinado";
+        }
+        if (intentosAcceso > 15){
+            nivelPersis = "Amenaza Persistente Avanzada";
+        }
+        persistencia.setText(nivelPersis);
 
     }
    

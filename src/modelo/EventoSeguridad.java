@@ -8,6 +8,8 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.time.format.ResolverStyle;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
 public class EventoSeguridad {
     protected String idEvento;
@@ -73,104 +75,31 @@ public class EventoSeguridad {
     }
     
     
-    Scanner entrada = new Scanner(System.in);
-    
-    public int validarEntero(String mensaje, String error, int limiteInf, int limiteSup){
-       int valor = 0;
-       boolean continuar = true;
-        do {
-            try {
-                System.out.print(mensaje);
-                valor = entrada.nextInt();
-                if (valor < limiteInf || valor > limiteSup) {
-                    System.out.println(error);
-                } else {
-                    continuar = false;
-                }
-            } catch (InputMismatchException e) {
-                System.out.println("Error: Debes indicar un numero entero positivo.");
-                entrada.nextLine(); // Limpia el buffer del Scanner para evitar un bucle infinito
-            }
-        } while (continuar);
-        entrada.nextLine(); // Limpia el buffer después de la lectura exitosa del número
-        return valor;
-    }
-
-    protected String validarCadena(String mensaje, String error, String regex){
-        String valor;
-        boolean continuar = true;
-        do {
-            System.out.print(mensaje);
-            valor = entrada.nextLine();
-            if (valor.matches(regex)) {
-                continuar = false;
-            } else {
-                System.out.println(error);
-            }
-        } while (continuar);
-        return valor;
+    public void GenerarReporteBasico(JLabel ID, JLabel amenaza, JLabel descripcionJ){
+        ID.setText(idEvento);
+        amenaza.setText(tipoAmenaza);
+        descripcionJ.setText(descripcion);
     }
     
-    protected LocalDate validarFecha(String mensaje, String mensajeError) {
-
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/uuuu").withResolverStyle(ResolverStyle.STRICT);
-        
-        LocalDate fechaValida = null;
-        while (fechaValida == null) {
-            try {
-                System.out.print(mensaje);
-                String fechaentrada = entrada.nextLine().trim();
-                LocalDate fecha = LocalDate.parse(fechaentrada, dtf);
-                LocalDate hoy = LocalDate.now();
-            if (fecha.isBefore(hoy) || fecha.isEqual(hoy)) {
-                fechaValida = fecha;
-            } else {
-                System.out.println("Error: La fecha debe ser hasta el dia de hoy. La fecha no debe ser futura.");
-            }
-            } catch (DateTimeParseException e) {
-                System.out.println("Error: " + mensajeError);
-            }
-        }
-        return fechaValida;
-    }
-
-
-    public void leerDatos(){
-        idEvento = validarCadena("Ingrese el ID del evento: ","Error: Titulo invalido. Solo se permiten letras, números, espacios y ciertos signos de puntuación (1-250 caracteres).","^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑüÜ\\s.',-]{1,250}$");
-        tipoAmenaza = validarCadena("Ingrese el tipo de amenaza: ","Error: Titulo invalido. Solo se permiten letras, números, espacios y ciertos signos de puntuación (1-250 caracteres).","^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑüÜ\\s.',-]{1,250}$");
-        nivelRiesgo = validarEntero("Ingrese un numero del 1 al 3 segun el nivel de riesgo de la amenaza (1 = Bajo; 2 = Medio; 3 = Alto): ", "Error: el numero debe ser del 1 al 3.",1,3);
-        fechaDeteccion = validarFecha("Ingrese la fecha en que se detecto el evento (dd/MM/yyyy): ","Error: Formato incorrecto o fecha inexistente. Asegurate de usar dd/MM/yyyy");
-        descripcion = validarCadena("Ingrese la descripcion del incidente: ","Error: Titulo invalido. Solo se permiten letras, números, espacios y ciertos signos de puntuación (1-250 caracteres).","^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑüÜ\\s.',-]{1,250}$");
-        }
-    
-    public void GenerarReporte(boolean esResumido){
-        System.out.println("--GENERANDO REPORTE BASICO--");
-        System.out.println("identificador: "+idEvento);
-        System.out.println("Tipo de Amenaza: "+tipoAmenaza);
-        System.out.println("Descripcion: "+descripcion);
-    }
-    
-    public void GenerarReporte(){
-        System.out.println("--GENERANDO REPORTE DETALLADO--");
-        System.out.println("identificador: "+idEvento);
-        System.out.println("Tipo de Amenaza: "+tipoAmenaza);
-        
+    public void GenerarReporteDetallado(JLabel ID, JLabel amenaza, JLabel nivel, JLabel fecha, JLabel descripcionJ){
+        ID.setText(idEvento);
+        amenaza.setText(tipoAmenaza);
         switch (nivelRiesgo){
-            case 1->System.out.println("Nivel de Riesgo: Amenaza Leve"); 
-            case 2->System.out.println("Nivel de Riesgo: Amenaza Moderada");   
-            case 3->System.out.println("Nivel de Riesgo: Amenaza Critica");
-            default->System.out.println("Nivel de Riesgo: Sin Amenaza Detectada");
+            case 1->nivel.setText("Amenaza Leve");
+            case 2->nivel.setText("Amenaza Moderada");
+            case 3->nivel.setText("Amenaza Critica");
+            default->nivel.setText("Sin amenaza detectada");
         }
-        System.out.println("Descripcion: "+descripcion);
-        System.out.println("Fecha de Deteccion: "+fechaDeteccion);
+        fecha.setText(fechaDeteccion.toString());
+        descripcionJ.setText(descripcion);
     }
     
     public void analizarImpacto(){
         switch (nivelRiesgo){
-            case 1->System.out.println("El nivel de riesgo es bajo. NO SE REQUIERE ACCION"); 
-            case 2->System.out.println("El nivel de riesgo es medio. TOME SUS PRECAUCIONES");   
-            case 3->System.out.println("El nivel de riesgo es alto. ACCION INMEDIATA REQUERIDA");
-            default->System.out.println("No hay nivel de Riesgo: Sin Amenaza Detectada");
+            case 1->JOptionPane.showMessageDialog(null,"El nivel de riesgo es bajo. NO SE REQUIERE ACCION" , "Analisis de impacto", JOptionPane.INFORMATION_MESSAGE); 
+            case 2->JOptionPane.showMessageDialog(null,"El nivel de riesgo es medio. TOME SUS PRECAUCIONES" , "Analisis de impacto", JOptionPane.INFORMATION_MESSAGE);  
+            case 3->JOptionPane.showMessageDialog(null,"El nivel de riesgo es ALTO. ACCION INMEDIATA REQUERIDA" , "Analisis de impacto", JOptionPane.ERROR_MESSAGE); 
+            default->JOptionPane.showMessageDialog(null,"No hay nivel de Riesgo: Sin Amenaza Detectada" , "Analisis de impacto", JOptionPane.INFORMATION_MESSAGE); 
         }
     }
 
