@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package laboratorioevaluado;
+package vista;
 
 import javax.swing.JTabbedPane;
 
@@ -391,7 +391,6 @@ public class MainJFrame extends javax.swing.JFrame {
         GenerarReporte.add(detallado, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 530, 120, 40));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/generarReporte.png"))); // NOI18N
-        jLabel1.setPreferredSize(new java.awt.Dimension(800, 600));
         GenerarReporte.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jTabbedPane1.addTab("tab11", GenerarReporte);
@@ -576,19 +575,19 @@ public class MainJFrame extends javax.swing.JFrame {
         labelIntentosAcceso1.setForeground(new java.awt.Color(255, 255, 255));
         labelIntentosAcceso1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelIntentosAcceso1.setText("0");
-        ReporteDetalladoIntrusion.add(labelIntentosAcceso1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 367, 240, 20));
+        ReporteDetalladoIntrusion.add(labelIntentosAcceso1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 360, 240, 20));
 
         lableDescripcion3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lableDescripcion3.setForeground(new java.awt.Color(255, 255, 255));
         lableDescripcion3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lableDescripcion3.setText("no hay descripcion");
-        ReporteDetalladoIntrusion.add(lableDescripcion3, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 410, 240, 70));
+        lableDescripcion3.setText("no hay nivel");
+        ReporteDetalladoIntrusion.add(lableDescripcion3, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 410, 240, 20));
 
         labelEvaluacionRiesgo1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         labelEvaluacionRiesgo1.setForeground(new java.awt.Color(255, 255, 255));
         labelEvaluacionRiesgo1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelEvaluacionRiesgo1.setText("no hay descripcion");
-        ReporteDetalladoIntrusion.add(labelEvaluacionRiesgo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 495, 190, 30));
+        ReporteDetalladoIntrusion.add(labelEvaluacionRiesgo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 450, 210, 80));
 
         volver7.setBorderPainted(false);
         volver7.setContentAreaFilled(false);
