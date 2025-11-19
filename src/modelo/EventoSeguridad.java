@@ -12,6 +12,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 public class EventoSeguridad {
+    //!!!!!!!!!!!
     protected String idEvento;
     protected String tipoAmenaza;
     protected int nivelRiesgo; //1: Bajo - 2:Medio - 3: Alto

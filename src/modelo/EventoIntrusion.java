@@ -16,8 +16,7 @@ public class EventoIntrusion extends EventoSeguridad{
     private int intentosAcceso;
     private String usuarioAfectado;
     
-    Scanner entrada = new Scanner(System.in);
-
+    //!!!!!!!!!!!
     
     public EventoIntrusion(String idEvento, String tipoAmenaza, int nivelRiesgo, LocalDate fechaDeteccion, String descripcion, String puntoAcceso, int intentosAcceso, String usuarioAfectado) {
         super(idEvento, tipoAmenaza, nivelRiesgo, fechaDeteccion, descripcion);
