@@ -1,5 +1,5 @@
 
-package laboratorioevaluado;
+package modelo;
 
 import java.util.InputMismatchException;
 import java.time.LocalTime;
