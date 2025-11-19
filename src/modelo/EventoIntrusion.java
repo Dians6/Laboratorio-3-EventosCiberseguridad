@@ -81,14 +81,15 @@ public class EventoIntrusion extends EventoSeguridad{
         
     }
 
-    public void GenerarReporteDetallado(JLabel ID, JLabel amenaza, JLabel descripcionJ, JLabel fecha, JLabel intentos, JLabel ptoAcceso, JLabel nivel, JLabel persistencia){
+    public void GenerarReporteDetallado(JLabel ID, JLabel amenaza, JLabel descripcionJ, JLabel fecha, JLabel intentos, JLabel ptoAcceso, JLabel nivel, JLabel evalRiesgo,JLabel persistencia){
         ID.setText(idEvento);
         amenaza.setText(tipoAmenaza);
+        nivel.setText(String.valueOf(nivelRiesgo));
         switch (nivelRiesgo){
-            case 1->nivel.setText("Amenaza Leve");
-            case 2->nivel.setText("Amenaza Moderada");
-            case 3->nivel.setText("Amenaza Critica");
-            default->nivel.setText("Sin amenaza detectada");
+            case 1->evalRiesgo.setText("Amenaza Leve");
+            case 2->evalRiesgo.setText("Amenaza Moderada");
+            case 3->evalRiesgo.setText("Amenaza Critica");
+            default->evalRiesgo.setText("Sin amenaza detectada");
         }
         fecha.setText(fechaDeteccion.toString());
         descripcionJ.setText(descripcion);
@@ -114,7 +115,8 @@ public class EventoIntrusion extends EventoSeguridad{
         super.analizarImpacto();
         //si se superan los 10 intentos y el nivel de riesgo es alto alerta critica
         if ((nivelRiesgo == 3) && (intentosAcceso >= 10)){
-            System.out.println("ALERTA CRITICA: Posible compromiso de sistema");
+            JOptionPane.showMessageDialog(null,"ALERTA CRITICA: Posible compromiso del sistema" , "Analisis de impacto", JOptionPane.INFORMATION_MESSAGE); 
+
         }
     }
    

@@ -81,14 +81,15 @@ public class EventoSeguridad {
         descripcionJ.setText(descripcion);
     }
     
-    public void GenerarReporteDetallado(JLabel ID, JLabel amenaza, JLabel nivel, JLabel fecha, JLabel descripcionJ){
+    public void GenerarReporteDetallado(JLabel ID, JLabel amenaza, JLabel nivel, JLabel evalRiesgo,JLabel fecha, JLabel descripcionJ){
         ID.setText(idEvento);
         amenaza.setText(tipoAmenaza);
+        nivel.setText(String.valueOf(nivelRiesgo));
         switch (nivelRiesgo){
-            case 1->nivel.setText("Amenaza Leve");
-            case 2->nivel.setText("Amenaza Moderada");
-            case 3->nivel.setText("Amenaza Critica");
-            default->nivel.setText("Sin amenaza detectada");
+            case 1->evalRiesgo.setText("Amenaza Leve");
+            case 2->evalRiesgo.setText("Amenaza Moderada");
+            case 3->evalRiesgo.setText("Amenaza Critica");
+            default->evalRiesgo.setText("Sin amenaza detectada");
         }
         fecha.setText(fechaDeteccion.toString());
         descripcionJ.setText(descripcion);
@@ -103,20 +104,7 @@ public class EventoSeguridad {
         }
     }
 
-    public void mostrarInformacion(){
-        System.out.println("ID del evento: " + idEvento);
-        System.out.println("Tipo de Amenaza: " + tipoAmenaza);
-        System.out.print("Nivel de riesgo: ");
-        switch (nivelRiesgo) {
-            case 1 -> System.out.println("Bajo");
-            case 2 -> System.out.println("Medio");
-            case 3 -> System.out.println("Alto");
-            default -> System.out.println("Nivel de riesgo desconocido (" + nivelRiesgo + ")");
-            }
-        System.out.println("Fecha de deteccion: " + fechaDeteccion);
-        System.out.println("Descripcion: " + descripcion);
-    }
-
+   
     
     
     
