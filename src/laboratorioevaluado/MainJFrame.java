@@ -4,6 +4,8 @@
  */
 package laboratorioevaluado;
 
+import javax.swing.JTabbedPane;
+
 /**
  *
  * @author Personal
@@ -27,297 +29,736 @@ public class MainJFrame extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
 
         MenuPrincipal = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        registrarNuevoEvento = new javax.swing.JButton();
+        generarReporte = new javax.swing.JButton();
+        consultarInformacion = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        salir = new javax.swing.JButton();
+        panelMenu = new javax.swing.JLabel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         Principal = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        registrarNuevoEvento = new javax.swing.JPanel();
-        jLabel12 = new javax.swing.JLabel();
-        registrarEventoSimple = new javax.swing.JPanel();
-        jLabel13 = new javax.swing.JLabel();
-        registrarEventoIntrusion1 = new javax.swing.JPanel();
-        jLabel14 = new javax.swing.JLabel();
-        registrarEventoIntrusion2 = new javax.swing.JPanel();
-        jLabel15 = new javax.swing.JLabel();
-        reporteBasico = new javax.swing.JPanel();
-        jLabel16 = new javax.swing.JLabel();
-        reporteBasicoIntrusion = new javax.swing.JPanel();
-        jLabel17 = new javax.swing.JLabel();
-        reporteDetallado = new javax.swing.JPanel();
-        jLabel18 = new javax.swing.JLabel();
-        reporteDetalladoIntrusion = new javax.swing.JPanel();
-        jLabel19 = new javax.swing.JLabel();
-        consultarInfo = new javax.swing.JPanel();
-        jLabel20 = new javax.swing.JLabel();
+        labelPrincipal = new javax.swing.JLabel();
+        RegistrarNuevoEvento = new javax.swing.JPanel();
+        intrusion = new javax.swing.JButton();
+        simple = new javax.swing.JButton();
+        labelRNE = new javax.swing.JLabel();
+        RegistrarEventoSimple = new javax.swing.JPanel();
+        textID = new javax.swing.JTextField();
+        textTipoAmenaza = new javax.swing.JTextField();
+        textFechaDeteccion = new javax.swing.JTextField();
+        textDescripcion = new javax.swing.JTextField();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        volver1 = new javax.swing.JButton();
+        crear1 = new javax.swing.JButton();
+        labelRES = new javax.swing.JLabel();
+        RegistrarEventoIntrusion1 = new javax.swing.JPanel();
+        textID1 = new javax.swing.JTextField();
+        textTipoAmenaza1 = new javax.swing.JTextField();
+        textFechaDeteccion1 = new javax.swing.JTextField();
+        textDescripcion1 = new javax.swing.JTextField();
+        jComboBox2 = new javax.swing.JComboBox<>();
+        volver2 = new javax.swing.JButton();
+        siguiente1 = new javax.swing.JButton();
+        labelREI1 = new javax.swing.JLabel();
+        RegistrarEventoIntrusion2 = new javax.swing.JPanel();
+        textID2 = new javax.swing.JTextField();
+        textTipoAmenaza2 = new javax.swing.JTextField();
+        textFechaDeteccion2 = new javax.swing.JTextField();
+        volver3 = new javax.swing.JButton();
+        crear2 = new javax.swing.JButton();
+        labelREI2 = new javax.swing.JLabel();
+        GenerarReporte = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jList1 = new javax.swing.JList<>();
+        basico = new javax.swing.JButton();
+        detallado = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        ReporteBasico = new javax.swing.JPanel();
+        labelID = new javax.swing.JLabel();
+        labelTipoAmenaza = new javax.swing.JLabel();
+        lableDescripcion = new javax.swing.JLabel();
+        volver4 = new javax.swing.JButton();
+        labelRB = new javax.swing.JLabel();
+        ReporteBasicoIntrusion = new javax.swing.JPanel();
+        labelID1 = new javax.swing.JLabel();
+        labelPuntoAcceso = new javax.swing.JLabel();
+        labelTipoAmenaza1 = new javax.swing.JLabel();
+        labelNivelRiesgo1 = new javax.swing.JLabel();
+        labelFechaDeteccion1 = new javax.swing.JLabel();
+        labelIntentosAcceso = new javax.swing.JLabel();
+        lableDescripcion1 = new javax.swing.JLabel();
+        volver5 = new javax.swing.JButton();
+        labelRBI = new javax.swing.JLabel();
+        ReporteDetallado = new javax.swing.JPanel();
+        labelID2 = new javax.swing.JLabel();
+        labelTipoAmenaza2 = new javax.swing.JLabel();
+        labelNivelRiesgo2 = new javax.swing.JLabel();
+        labelFechaDeteccion2 = new javax.swing.JLabel();
+        lableDescripcion2 = new javax.swing.JLabel();
+        labelEvaluacionRiesgo = new javax.swing.JLabel();
+        volver6 = new javax.swing.JButton();
+        labelRD = new javax.swing.JLabel();
+        ReporteDetalladoIntrusion = new javax.swing.JPanel();
+        labelID3 = new javax.swing.JLabel();
+        labelPuntoAcceso1 = new javax.swing.JLabel();
+        labelTipoAmenaza3 = new javax.swing.JLabel();
+        labelNivelRiesgo3 = new javax.swing.JLabel();
+        labelFechaDeteccion3 = new javax.swing.JLabel();
+        labelIntentosAcceso1 = new javax.swing.JLabel();
+        lableDescripcion3 = new javax.swing.JLabel();
+        labelEvaluacionRiesgo1 = new javax.swing.JLabel();
+        volver7 = new javax.swing.JButton();
+        labelRDI = new javax.swing.JLabel();
+        ConsultarInfo = new javax.swing.JPanel();
+        analizarImpacto = new javax.swing.JButton();
+        bloquearImpacto = new javax.swing.JButton();
+        aislarSistema = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jList2 = new javax.swing.JList<>();
+        labelCI = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new java.awt.GridBagLayout());
 
         MenuPrincipal.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Principal.png"))); // NOI18N
-        MenuPrincipal.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 300, -1));
+        registrarNuevoEvento.setBorderPainted(false);
+        registrarNuevoEvento.setContentAreaFilled(false);
+        registrarNuevoEvento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                registrarNuevoEventoActionPerformed(evt);
+            }
+        });
+        MenuPrincipal.add(registrarNuevoEvento, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 220, 80));
+
+        generarReporte.setBorderPainted(false);
+        generarReporte.setContentAreaFilled(false);
+        generarReporte.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                generarReporteActionPerformed(evt);
+            }
+        });
+        MenuPrincipal.add(generarReporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, 220, 70));
+
+        consultarInformacion.setBorderPainted(false);
+        consultarInformacion.setContentAreaFilled(false);
+        consultarInformacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                consultarInformacionActionPerformed(evt);
+            }
+        });
+        MenuPrincipal.add(consultarInformacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, 220, 70));
+
+        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("000");
+        jLabel2.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        jLabel2.setOpaque(true);
+        MenuPrincipal.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 474, 160, 30));
+
+        salir.setBorderPainted(false);
+        salir.setContentAreaFilled(false);
+        salir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                salirActionPerformed(evt);
+            }
+        });
+        MenuPrincipal.add(salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 520, 220, 70));
+
+        panelMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Principal.png"))); // NOI18N
+        MenuPrincipal.add(panelMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 300, -1));
 
         jTabbedPane1.setPreferredSize(new java.awt.Dimension(800, 635));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Principal.png"))); // NOI18N
+        Principal.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout PrincipalLayout = new javax.swing.GroupLayout(Principal);
-        Principal.setLayout(PrincipalLayout);
-        PrincipalLayout.setHorizontalGroup(
-            PrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 800, Short.MAX_VALUE)
-            .addGroup(PrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(PrincipalLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jLabel2)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        PrincipalLayout.setVerticalGroup(
-            PrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
-            .addGroup(PrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(PrincipalLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jLabel2)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
+        labelPrincipal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Principal.png"))); // NOI18N
+        Principal.add(labelPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jTabbedPane1.addTab("tab1", Principal);
 
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/registrarNuevoEvento.png"))); // NOI18N
+        RegistrarNuevoEvento.setMaximumSize(new java.awt.Dimension(800, 600));
+        RegistrarNuevoEvento.setMinimumSize(new java.awt.Dimension(800, 600));
+        RegistrarNuevoEvento.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout registrarNuevoEventoLayout = new javax.swing.GroupLayout(registrarNuevoEvento);
-        registrarNuevoEvento.setLayout(registrarNuevoEventoLayout);
-        registrarNuevoEventoLayout.setHorizontalGroup(
-            registrarNuevoEventoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 800, Short.MAX_VALUE)
-            .addGroup(registrarNuevoEventoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(registrarNuevoEventoLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jLabel12)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        registrarNuevoEventoLayout.setVerticalGroup(
-            registrarNuevoEventoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
-            .addGroup(registrarNuevoEventoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(registrarNuevoEventoLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jLabel12)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
+        intrusion.setForeground(new java.awt.Color(255, 255, 255));
+        intrusion.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        intrusion.setBorderPainted(false);
+        intrusion.setContentAreaFilled(false);
+        intrusion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                intrusionActionPerformed(evt);
+            }
+        });
+        RegistrarNuevoEvento.add(intrusion, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 246, 229, 70));
+        intrusion.getAccessibleContext().setAccessibleName("intrusion");
 
-        jTabbedPane1.addTab("tab1", registrarNuevoEvento);
+        simple.setForeground(new java.awt.Color(255, 255, 255));
+        simple.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        simple.setBorderPainted(false);
+        simple.setContentAreaFilled(false);
+        simple.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                simpleActionPerformed(evt);
+            }
+        });
+        RegistrarNuevoEvento.add(simple, new org.netbeans.lib.awtextra.AbsoluteConstraints(311, 244, 229, 68));
+        simple.getAccessibleContext().setAccessibleName("simple");
 
-        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/registrarEventoSimple.png"))); // NOI18N
+        labelRNE.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/registrarNuevoEvento.png"))); // NOI18N
+        RegistrarNuevoEvento.add(labelRNE, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        labelRNE.getAccessibleContext().setAccessibleName("labelRNE");
 
-        javax.swing.GroupLayout registrarEventoSimpleLayout = new javax.swing.GroupLayout(registrarEventoSimple);
-        registrarEventoSimple.setLayout(registrarEventoSimpleLayout);
-        registrarEventoSimpleLayout.setHorizontalGroup(
-            registrarEventoSimpleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 800, Short.MAX_VALUE)
-            .addGroup(registrarEventoSimpleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(registrarEventoSimpleLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jLabel13)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        registrarEventoSimpleLayout.setVerticalGroup(
-            registrarEventoSimpleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
-            .addGroup(registrarEventoSimpleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(registrarEventoSimpleLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jLabel13)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
+        jTabbedPane1.addTab("tab1", RegistrarNuevoEvento);
 
-        jTabbedPane1.addTab("tab1", registrarEventoSimple);
+        RegistrarEventoSimple.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/registrarEventoIntrusion1.png"))); // NOI18N
+        textID.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        textID.setForeground(new java.awt.Color(255, 255, 255));
+        textID.setBorder(null);
+        RegistrarEventoSimple.add(textID, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 190, 240, 20));
 
-        javax.swing.GroupLayout registrarEventoIntrusion1Layout = new javax.swing.GroupLayout(registrarEventoIntrusion1);
-        registrarEventoIntrusion1.setLayout(registrarEventoIntrusion1Layout);
-        registrarEventoIntrusion1Layout.setHorizontalGroup(
-            registrarEventoIntrusion1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 800, Short.MAX_VALUE)
-            .addGroup(registrarEventoIntrusion1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(registrarEventoIntrusion1Layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jLabel14)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        registrarEventoIntrusion1Layout.setVerticalGroup(
-            registrarEventoIntrusion1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
-            .addGroup(registrarEventoIntrusion1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(registrarEventoIntrusion1Layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jLabel14)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
+        textTipoAmenaza.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        textTipoAmenaza.setForeground(new java.awt.Color(255, 255, 255));
+        textTipoAmenaza.setBorder(null);
+        RegistrarEventoSimple.add(textTipoAmenaza, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 235, 240, 20));
 
-        jTabbedPane1.addTab("tab1", registrarEventoIntrusion1);
+        textFechaDeteccion.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        textFechaDeteccion.setForeground(new java.awt.Color(255, 255, 255));
+        textFechaDeteccion.setBorder(null);
+        RegistrarEventoSimple.add(textFechaDeteccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 350, 240, 20));
 
-        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/registrarEventoIntrusion2.png"))); // NOI18N
+        textDescripcion.setColumns(5);
+        textDescripcion.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        textDescripcion.setForeground(new java.awt.Color(255, 255, 255));
+        textDescripcion.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        textDescripcion.setBorder(null);
+        textDescripcion.setMaximumSize(new java.awt.Dimension(240, 130));
+        RegistrarEventoSimple.add(textDescripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 390, 240, 130));
 
-        javax.swing.GroupLayout registrarEventoIntrusion2Layout = new javax.swing.GroupLayout(registrarEventoIntrusion2);
-        registrarEventoIntrusion2.setLayout(registrarEventoIntrusion2Layout);
-        registrarEventoIntrusion2Layout.setHorizontalGroup(
-            registrarEventoIntrusion2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 800, Short.MAX_VALUE)
-            .addGroup(registrarEventoIntrusion2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(registrarEventoIntrusion2Layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jLabel15)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        registrarEventoIntrusion2Layout.setVerticalGroup(
-            registrarEventoIntrusion2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
-            .addGroup(registrarEventoIntrusion2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(registrarEventoIntrusion2Layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jLabel15)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
+        jComboBox1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3" }));
+        RegistrarEventoSimple.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(512, 282, 240, 40));
 
-        jTabbedPane1.addTab("tab1", registrarEventoIntrusion2);
+        volver1.setBorderPainted(false);
+        volver1.setContentAreaFilled(false);
+        volver1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                volver1ActionPerformed(evt);
+            }
+        });
+        RegistrarEventoSimple.add(volver1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 540, 110, 50));
 
-        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/reporteBasico.png"))); // NOI18N
+        crear1.setBorderPainted(false);
+        crear1.setContentAreaFilled(false);
+        crear1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                crear1ActionPerformed(evt);
+            }
+        });
+        RegistrarEventoSimple.add(crear1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 540, 110, 50));
 
-        javax.swing.GroupLayout reporteBasicoLayout = new javax.swing.GroupLayout(reporteBasico);
-        reporteBasico.setLayout(reporteBasicoLayout);
-        reporteBasicoLayout.setHorizontalGroup(
-            reporteBasicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 800, Short.MAX_VALUE)
-            .addGroup(reporteBasicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(reporteBasicoLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jLabel16)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        reporteBasicoLayout.setVerticalGroup(
-            reporteBasicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
-            .addGroup(reporteBasicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(reporteBasicoLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jLabel16)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
+        labelRES.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/registrarEventoSimple.png"))); // NOI18N
+        RegistrarEventoSimple.add(labelRES, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        labelRES.getAccessibleContext().setAccessibleName("labelRES");
 
-        jTabbedPane1.addTab("tab1", reporteBasico);
+        jTabbedPane1.addTab("tab1", RegistrarEventoSimple);
 
-        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/reporteBasicoIntrusion.png"))); // NOI18N
+        RegistrarEventoIntrusion1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout reporteBasicoIntrusionLayout = new javax.swing.GroupLayout(reporteBasicoIntrusion);
-        reporteBasicoIntrusion.setLayout(reporteBasicoIntrusionLayout);
-        reporteBasicoIntrusionLayout.setHorizontalGroup(
-            reporteBasicoIntrusionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 800, Short.MAX_VALUE)
-            .addGroup(reporteBasicoIntrusionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(reporteBasicoIntrusionLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jLabel17)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        reporteBasicoIntrusionLayout.setVerticalGroup(
-            reporteBasicoIntrusionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
-            .addGroup(reporteBasicoIntrusionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(reporteBasicoIntrusionLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jLabel17)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
+        textID1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        textID1.setForeground(new java.awt.Color(255, 255, 255));
+        textID1.setBorder(null);
+        RegistrarEventoIntrusion1.add(textID1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 188, 240, 20));
 
-        jTabbedPane1.addTab("tab1", reporteBasicoIntrusion);
+        textTipoAmenaza1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        textTipoAmenaza1.setForeground(new java.awt.Color(255, 255, 255));
+        textTipoAmenaza1.setBorder(null);
+        RegistrarEventoIntrusion1.add(textTipoAmenaza1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 235, 240, 20));
 
-        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/reporteDetallado.png"))); // NOI18N
+        textFechaDeteccion1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        textFechaDeteccion1.setForeground(new java.awt.Color(255, 255, 255));
+        textFechaDeteccion1.setBorder(null);
+        RegistrarEventoIntrusion1.add(textFechaDeteccion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 350, 240, 20));
 
-        javax.swing.GroupLayout reporteDetalladoLayout = new javax.swing.GroupLayout(reporteDetallado);
-        reporteDetallado.setLayout(reporteDetalladoLayout);
-        reporteDetalladoLayout.setHorizontalGroup(
-            reporteDetalladoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 800, Short.MAX_VALUE)
-            .addGroup(reporteDetalladoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(reporteDetalladoLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jLabel18)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        reporteDetalladoLayout.setVerticalGroup(
-            reporteDetalladoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
-            .addGroup(reporteDetalladoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(reporteDetalladoLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jLabel18)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
+        textDescripcion1.setColumns(5);
+        textDescripcion1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        textDescripcion1.setForeground(new java.awt.Color(255, 255, 255));
+        textDescripcion1.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        textDescripcion1.setBorder(null);
+        textDescripcion1.setMaximumSize(new java.awt.Dimension(240, 130));
+        RegistrarEventoIntrusion1.add(textDescripcion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 390, 240, 130));
 
-        jTabbedPane1.addTab("tab1", reporteDetallado);
+        jComboBox2.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3" }));
+        RegistrarEventoIntrusion1.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(512, 282, 240, 40));
 
-        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/reporteDetalladoIntrusion.png"))); // NOI18N
+        volver2.setBorderPainted(false);
+        volver2.setContentAreaFilled(false);
+        volver2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                volver2ActionPerformed(evt);
+            }
+        });
+        RegistrarEventoIntrusion1.add(volver2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 540, 110, 50));
 
-        javax.swing.GroupLayout reporteDetalladoIntrusionLayout = new javax.swing.GroupLayout(reporteDetalladoIntrusion);
-        reporteDetalladoIntrusion.setLayout(reporteDetalladoIntrusionLayout);
-        reporteDetalladoIntrusionLayout.setHorizontalGroup(
-            reporteDetalladoIntrusionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 800, Short.MAX_VALUE)
-            .addGroup(reporteDetalladoIntrusionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(reporteDetalladoIntrusionLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jLabel19)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        reporteDetalladoIntrusionLayout.setVerticalGroup(
-            reporteDetalladoIntrusionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
-            .addGroup(reporteDetalladoIntrusionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(reporteDetalladoIntrusionLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jLabel19)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
+        siguiente1.setBorderPainted(false);
+        siguiente1.setContentAreaFilled(false);
+        siguiente1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                siguiente1ActionPerformed(evt);
+            }
+        });
+        RegistrarEventoIntrusion1.add(siguiente1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 540, 150, 50));
 
-        jTabbedPane1.addTab("tab1", reporteDetalladoIntrusion);
+        labelREI1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/registrarEventoIntrusion1.png"))); // NOI18N
+        RegistrarEventoIntrusion1.add(labelREI1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/consultarInfo.png"))); // NOI18N
+        jTabbedPane1.addTab("tab1", RegistrarEventoIntrusion1);
 
-        javax.swing.GroupLayout consultarInfoLayout = new javax.swing.GroupLayout(consultarInfo);
-        consultarInfo.setLayout(consultarInfoLayout);
-        consultarInfoLayout.setHorizontalGroup(
-            consultarInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 800, Short.MAX_VALUE)
-            .addGroup(consultarInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(consultarInfoLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jLabel20)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        consultarInfoLayout.setVerticalGroup(
-            consultarInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
-            .addGroup(consultarInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(consultarInfoLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jLabel20)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
+        RegistrarEventoIntrusion2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTabbedPane1.addTab("tab1", consultarInfo);
+        textID2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        textID2.setForeground(new java.awt.Color(255, 255, 255));
+        textID2.setBorder(null);
+        RegistrarEventoIntrusion2.add(textID2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 190, 250, 20));
 
-        MenuPrincipal.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -35, -1, -1));
+        textTipoAmenaza2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        textTipoAmenaza2.setForeground(new java.awt.Color(255, 255, 255));
+        textTipoAmenaza2.setBorder(null);
+        RegistrarEventoIntrusion2.add(textTipoAmenaza2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 248, 250, 20));
 
-        getContentPane().add(MenuPrincipal, new java.awt.GridBagConstraints());
+        textFechaDeteccion2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        textFechaDeteccion2.setForeground(new java.awt.Color(255, 255, 255));
+        textFechaDeteccion2.setBorder(null);
+        RegistrarEventoIntrusion2.add(textFechaDeteccion2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 303, 250, 20));
+
+        volver3.setBorderPainted(false);
+        volver3.setContentAreaFilled(false);
+        volver3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                volver3ActionPerformed(evt);
+            }
+        });
+        RegistrarEventoIntrusion2.add(volver3, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 540, 110, 50));
+
+        crear2.setBorderPainted(false);
+        crear2.setContentAreaFilled(false);
+        crear2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                crear2ActionPerformed(evt);
+            }
+        });
+        RegistrarEventoIntrusion2.add(crear2, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 540, 110, 50));
+
+        labelREI2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/registrarEventoIntrusion2.png"))); // NOI18N
+        RegistrarEventoIntrusion2.add(labelREI2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        jTabbedPane1.addTab("tab1", RegistrarEventoIntrusion2);
+
+        GenerarReporte.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jList1.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jList1.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane1.setViewportView(jList1);
+
+        GenerarReporte.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 130, 470, 340));
+
+        basico.setBorderPainted(false);
+        basico.setContentAreaFilled(false);
+        basico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                basicoActionPerformed(evt);
+            }
+        });
+        GenerarReporte.add(basico, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 530, 120, 40));
+
+        detallado.setBorderPainted(false);
+        detallado.setContentAreaFilled(false);
+        detallado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                detalladoActionPerformed(evt);
+            }
+        });
+        GenerarReporte.add(detallado, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 530, 120, 40));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/generarReporte.png"))); // NOI18N
+        jLabel1.setPreferredSize(new java.awt.Dimension(800, 600));
+        GenerarReporte.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        jTabbedPane1.addTab("tab11", GenerarReporte);
+
+        ReporteBasico.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        labelID.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        labelID.setForeground(new java.awt.Color(255, 255, 255));
+        labelID.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelID.setText("000");
+        ReporteBasico.add(labelID, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 137, 240, 20));
+
+        labelTipoAmenaza.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        labelTipoAmenaza.setForeground(new java.awt.Color(255, 255, 255));
+        labelTipoAmenaza.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelTipoAmenaza.setText("TIPO");
+        ReporteBasico.add(labelTipoAmenaza, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 180, 240, 20));
+
+        lableDescripcion.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lableDescripcion.setForeground(new java.awt.Color(255, 255, 255));
+        lableDescripcion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lableDescripcion.setText("no hay descripcion");
+        ReporteBasico.add(lableDescripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 230, 240, 120));
+
+        volver4.setBorderPainted(false);
+        volver4.setContentAreaFilled(false);
+        volver4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                volver4ActionPerformed(evt);
+            }
+        });
+        ReporteBasico.add(volver4, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 540, 110, 40));
+
+        labelRB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/reporteBasico.png"))); // NOI18N
+        ReporteBasico.add(labelRB, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        jTabbedPane1.addTab("tab1", ReporteBasico);
+
+        ReporteBasicoIntrusion.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        labelID1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        labelID1.setForeground(new java.awt.Color(255, 255, 255));
+        labelID1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelID1.setText("000");
+        ReporteBasicoIntrusion.add(labelID1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 137, 240, 20));
+
+        labelPuntoAcceso.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        labelPuntoAcceso.setForeground(new java.awt.Color(255, 255, 255));
+        labelPuntoAcceso.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelPuntoAcceso.setText("000.000.000");
+        ReporteBasicoIntrusion.add(labelPuntoAcceso, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 180, 240, 20));
+
+        labelTipoAmenaza1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        labelTipoAmenaza1.setForeground(new java.awt.Color(255, 255, 255));
+        labelTipoAmenaza1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelTipoAmenaza1.setText("TIPO");
+        ReporteBasicoIntrusion.add(labelTipoAmenaza1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 230, 240, 20));
+
+        labelNivelRiesgo1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        labelNivelRiesgo1.setForeground(new java.awt.Color(255, 255, 255));
+        labelNivelRiesgo1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelNivelRiesgo1.setText("0");
+        ReporteBasicoIntrusion.add(labelNivelRiesgo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 274, 240, 20));
+
+        labelFechaDeteccion1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        labelFechaDeteccion1.setForeground(new java.awt.Color(255, 255, 255));
+        labelFechaDeteccion1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelFechaDeteccion1.setText("01/01/2000");
+        ReporteBasicoIntrusion.add(labelFechaDeteccion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 320, 240, 20));
+
+        labelIntentosAcceso.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        labelIntentosAcceso.setForeground(new java.awt.Color(255, 255, 255));
+        labelIntentosAcceso.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelIntentosAcceso.setText("0");
+        ReporteBasicoIntrusion.add(labelIntentosAcceso, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 367, 240, 20));
+
+        lableDescripcion1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lableDescripcion1.setForeground(new java.awt.Color(255, 255, 255));
+        lableDescripcion1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lableDescripcion1.setText("no hay descripcion");
+        ReporteBasicoIntrusion.add(lableDescripcion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 410, 240, 110));
+
+        volver5.setBorderPainted(false);
+        volver5.setContentAreaFilled(false);
+        volver5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                volver5ActionPerformed(evt);
+            }
+        });
+        ReporteBasicoIntrusion.add(volver5, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 540, 110, 40));
+
+        labelRBI.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/reporteBasicoIntrusion.png"))); // NOI18N
+        ReporteBasicoIntrusion.add(labelRBI, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        jTabbedPane1.addTab("tab1", ReporteBasicoIntrusion);
+
+        ReporteDetallado.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        labelID2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        labelID2.setForeground(new java.awt.Color(255, 255, 255));
+        labelID2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelID2.setText("000");
+        ReporteDetallado.add(labelID2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 137, 240, 20));
+
+        labelTipoAmenaza2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        labelTipoAmenaza2.setForeground(new java.awt.Color(255, 255, 255));
+        labelTipoAmenaza2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelTipoAmenaza2.setText("TIPO");
+        ReporteDetallado.add(labelTipoAmenaza2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 180, 240, 20));
+
+        labelNivelRiesgo2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        labelNivelRiesgo2.setForeground(new java.awt.Color(255, 255, 255));
+        labelNivelRiesgo2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelNivelRiesgo2.setText("0");
+        ReporteDetallado.add(labelNivelRiesgo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 227, 240, 20));
+
+        labelFechaDeteccion2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        labelFechaDeteccion2.setForeground(new java.awt.Color(255, 255, 255));
+        labelFechaDeteccion2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelFechaDeteccion2.setText("01/01/2000");
+        ReporteDetallado.add(labelFechaDeteccion2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 273, 240, 20));
+
+        lableDescripcion2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lableDescripcion2.setForeground(new java.awt.Color(255, 255, 255));
+        lableDescripcion2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lableDescripcion2.setText("no hay descripcion");
+        ReporteDetallado.add(lableDescripcion2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 320, 240, 120));
+
+        labelEvaluacionRiesgo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        labelEvaluacionRiesgo.setForeground(new java.awt.Color(255, 255, 255));
+        labelEvaluacionRiesgo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelEvaluacionRiesgo.setText("no hay descripcion");
+        ReporteDetallado.add(labelEvaluacionRiesgo, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 480, 190, 30));
+
+        volver6.setBorderPainted(false);
+        volver6.setContentAreaFilled(false);
+        volver6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                volver6ActionPerformed(evt);
+            }
+        });
+        ReporteDetallado.add(volver6, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 540, 110, 40));
+
+        labelRD.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/reporteDetallado.png"))); // NOI18N
+        ReporteDetallado.add(labelRD, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        jTabbedPane1.addTab("tab1", ReporteDetallado);
+
+        ReporteDetalladoIntrusion.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        labelID3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        labelID3.setForeground(new java.awt.Color(255, 255, 255));
+        labelID3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelID3.setText("000");
+        ReporteDetalladoIntrusion.add(labelID3, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 137, 240, 20));
+
+        labelPuntoAcceso1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        labelPuntoAcceso1.setForeground(new java.awt.Color(255, 255, 255));
+        labelPuntoAcceso1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelPuntoAcceso1.setText("000.000.000");
+        ReporteDetalladoIntrusion.add(labelPuntoAcceso1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 180, 240, 20));
+
+        labelTipoAmenaza3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        labelTipoAmenaza3.setForeground(new java.awt.Color(255, 255, 255));
+        labelTipoAmenaza3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelTipoAmenaza3.setText("TIPO");
+        ReporteDetalladoIntrusion.add(labelTipoAmenaza3, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 230, 240, 20));
+
+        labelNivelRiesgo3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        labelNivelRiesgo3.setForeground(new java.awt.Color(255, 255, 255));
+        labelNivelRiesgo3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelNivelRiesgo3.setText("0");
+        ReporteDetalladoIntrusion.add(labelNivelRiesgo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 274, 240, 20));
+
+        labelFechaDeteccion3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        labelFechaDeteccion3.setForeground(new java.awt.Color(255, 255, 255));
+        labelFechaDeteccion3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelFechaDeteccion3.setText("01/01/2000");
+        ReporteDetalladoIntrusion.add(labelFechaDeteccion3, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 320, 240, 20));
+
+        labelIntentosAcceso1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        labelIntentosAcceso1.setForeground(new java.awt.Color(255, 255, 255));
+        labelIntentosAcceso1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelIntentosAcceso1.setText("0");
+        ReporteDetalladoIntrusion.add(labelIntentosAcceso1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 367, 240, 20));
+
+        lableDescripcion3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lableDescripcion3.setForeground(new java.awt.Color(255, 255, 255));
+        lableDescripcion3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lableDescripcion3.setText("no hay descripcion");
+        ReporteDetalladoIntrusion.add(lableDescripcion3, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 410, 240, 70));
+
+        labelEvaluacionRiesgo1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        labelEvaluacionRiesgo1.setForeground(new java.awt.Color(255, 255, 255));
+        labelEvaluacionRiesgo1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelEvaluacionRiesgo1.setText("no hay descripcion");
+        ReporteDetalladoIntrusion.add(labelEvaluacionRiesgo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 495, 190, 30));
+
+        volver7.setBorderPainted(false);
+        volver7.setContentAreaFilled(false);
+        volver7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                volver7ActionPerformed(evt);
+            }
+        });
+        ReporteDetalladoIntrusion.add(volver7, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 540, 110, 40));
+
+        labelRDI.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/reporteDetalladoIntrusion.png"))); // NOI18N
+        ReporteDetalladoIntrusion.add(labelRDI, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        jTabbedPane1.addTab("tab1", ReporteDetalladoIntrusion);
+
+        ConsultarInfo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        analizarImpacto.setBorderPainted(false);
+        analizarImpacto.setContentAreaFilled(false);
+        analizarImpacto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                analizarImpactoActionPerformed(evt);
+            }
+        });
+        ConsultarInfo.add(analizarImpacto, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 530, 130, 60));
+
+        bloquearImpacto.setBorderPainted(false);
+        bloquearImpacto.setContentAreaFilled(false);
+        bloquearImpacto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bloquearImpactoActionPerformed(evt);
+            }
+        });
+        ConsultarInfo.add(bloquearImpacto, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 530, 130, 60));
+
+        aislarSistema.setBorderPainted(false);
+        aislarSistema.setContentAreaFilled(false);
+        aislarSistema.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                aislarSistemaActionPerformed(evt);
+            }
+        });
+        ConsultarInfo.add(aislarSistema, new org.netbeans.lib.awtextra.AbsoluteConstraints(635, 533, 130, 60));
+
+        jList2.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jList2.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane2.setViewportView(jList2);
+
+        ConsultarInfo.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 80, 450, 420));
+
+        labelCI.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/consultarInfo.png"))); // NOI18N
+        ConsultarInfo.add(labelCI, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        jTabbedPane1.addTab("tab1", ConsultarInfo);
+
+        MenuPrincipal.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -35, 800, 635));
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        getContentPane().add(MenuPrincipal, gridBagConstraints);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void registrarNuevoEventoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarNuevoEventoActionPerformed
+        JTabbedPane tabbedPane = (JTabbedPane) this.jTabbedPane1;
+        tabbedPane.setSelectedComponent(RegistrarNuevoEvento);
+    }//GEN-LAST:event_registrarNuevoEventoActionPerformed
+
+    private void generarReporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generarReporteActionPerformed
+        JTabbedPane tabbedPane = (JTabbedPane) this.jTabbedPane1;
+        tabbedPane.setSelectedComponent(GenerarReporte);
+    }//GEN-LAST:event_generarReporteActionPerformed
+
+    private void consultarInformacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultarInformacionActionPerformed
+        JTabbedPane tabbedPane = (JTabbedPane) this.jTabbedPane1;
+        tabbedPane.setSelectedComponent(ConsultarInfo);
+    }//GEN-LAST:event_consultarInformacionActionPerformed
+
+    private void salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_salirActionPerformed
+
+    private void simpleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simpleActionPerformed
+        JTabbedPane tabbedPane = (JTabbedPane) this.jTabbedPane1;
+        tabbedPane.setSelectedComponent(RegistrarEventoSimple);
+    }//GEN-LAST:event_simpleActionPerformed
+
+    private void intrusionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_intrusionActionPerformed
+        JTabbedPane tabbedPane = (JTabbedPane) this.jTabbedPane1;
+        tabbedPane.setSelectedComponent(RegistrarEventoIntrusion1);
+    }//GEN-LAST:event_intrusionActionPerformed
+
+    private void volver1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volver1ActionPerformed
+        JTabbedPane tabbedPane = (JTabbedPane) this.jTabbedPane1;
+        tabbedPane.setSelectedComponent(RegistrarNuevoEvento);
+    }//GEN-LAST:event_volver1ActionPerformed
+
+    private void crear1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crear1ActionPerformed
+        JTabbedPane tabbedPane = (JTabbedPane) this.jTabbedPane1;
+        tabbedPane.setSelectedComponent(RegistrarNuevoEvento);
+    }//GEN-LAST:event_crear1ActionPerformed
+
+    private void volver2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volver2ActionPerformed
+        JTabbedPane tabbedPane = (JTabbedPane) this.jTabbedPane1;
+        tabbedPane.setSelectedComponent(RegistrarNuevoEvento);
+    }//GEN-LAST:event_volver2ActionPerformed
+
+    private void siguiente1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_siguiente1ActionPerformed
+        JTabbedPane tabbedPane = (JTabbedPane) this.jTabbedPane1;
+        tabbedPane.setSelectedComponent(RegistrarEventoIntrusion2);
+    }//GEN-LAST:event_siguiente1ActionPerformed
+
+    private void volver3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volver3ActionPerformed
+        JTabbedPane tabbedPane = (JTabbedPane) this.jTabbedPane1;
+        tabbedPane.setSelectedComponent(RegistrarNuevoEvento);
+    }//GEN-LAST:event_volver3ActionPerformed
+
+    private void crear2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crear2ActionPerformed
+        JTabbedPane tabbedPane = (JTabbedPane) this.jTabbedPane1;
+        tabbedPane.setSelectedComponent(RegistrarNuevoEvento);
+    }//GEN-LAST:event_crear2ActionPerformed
+
+    private void volver4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volver4ActionPerformed
+        JTabbedPane tabbedPane = (JTabbedPane) this.jTabbedPane1;
+        tabbedPane.setSelectedComponent(GenerarReporte);
+    }//GEN-LAST:event_volver4ActionPerformed
+
+    private void basicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_basicoActionPerformed
+        JTabbedPane tabbedPane = (JTabbedPane) this.jTabbedPane1;
+        tabbedPane.setSelectedComponent(ReporteBasico);
+    }//GEN-LAST:event_basicoActionPerformed
+
+    private void detalladoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_detalladoActionPerformed
+        JTabbedPane tabbedPane = (JTabbedPane) this.jTabbedPane1;
+        tabbedPane.setSelectedComponent(ReporteDetallado);
+    }//GEN-LAST:event_detalladoActionPerformed
+
+    private void volver5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volver5ActionPerformed
+        JTabbedPane tabbedPane = (JTabbedPane) this.jTabbedPane1;
+        tabbedPane.setSelectedComponent(GenerarReporte);
+    }//GEN-LAST:event_volver5ActionPerformed
+
+    private void volver6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volver6ActionPerformed
+        JTabbedPane tabbedPane = (JTabbedPane) this.jTabbedPane1;
+        tabbedPane.setSelectedComponent(GenerarReporte);
+    }//GEN-LAST:event_volver6ActionPerformed
+
+    private void volver7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volver7ActionPerformed
+        JTabbedPane tabbedPane = (JTabbedPane) this.jTabbedPane1;
+        tabbedPane.setSelectedComponent(GenerarReporte);
+    }//GEN-LAST:event_volver7ActionPerformed
+
+    private void analizarImpactoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_analizarImpactoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_analizarImpactoActionPerformed
+
+    private void bloquearImpactoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bloquearImpactoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bloquearImpactoActionPerformed
+
+    private void aislarSistemaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aislarSistemaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_aislarSistemaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -345,28 +786,93 @@ public class MainJFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel ConsultarInfo;
+    private javax.swing.JPanel GenerarReporte;
     private javax.swing.JPanel MenuPrincipal;
     private javax.swing.JPanel Principal;
-    private javax.swing.JPanel consultarInfo;
+    private javax.swing.JPanel RegistrarEventoIntrusion1;
+    private javax.swing.JPanel RegistrarEventoIntrusion2;
+    private javax.swing.JPanel RegistrarEventoSimple;
+    private javax.swing.JPanel RegistrarNuevoEvento;
+    private javax.swing.JPanel ReporteBasico;
+    private javax.swing.JPanel ReporteBasicoIntrusion;
+    private javax.swing.JPanel ReporteDetallado;
+    private javax.swing.JPanel ReporteDetalladoIntrusion;
+    private javax.swing.JButton aislarSistema;
+    private javax.swing.JButton analizarImpacto;
+    private javax.swing.JButton basico;
+    private javax.swing.JButton bloquearImpacto;
+    private javax.swing.JButton consultarInformacion;
+    private javax.swing.JButton crear1;
+    private javax.swing.JButton crear2;
+    private javax.swing.JButton detallado;
+    private javax.swing.JButton generarReporte;
+    private javax.swing.JButton intrusion;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
+    private javax.swing.JList<String> jList1;
+    private javax.swing.JList<String> jList2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JPanel registrarEventoIntrusion1;
-    private javax.swing.JPanel registrarEventoIntrusion2;
-    private javax.swing.JPanel registrarEventoSimple;
-    private javax.swing.JPanel registrarNuevoEvento;
-    private javax.swing.JPanel reporteBasico;
-    private javax.swing.JPanel reporteBasicoIntrusion;
-    private javax.swing.JPanel reporteDetallado;
-    private javax.swing.JPanel reporteDetalladoIntrusion;
+    private javax.swing.JLabel labelCI;
+    private javax.swing.JLabel labelEvaluacionRiesgo;
+    private javax.swing.JLabel labelEvaluacionRiesgo1;
+    private javax.swing.JLabel labelFechaDeteccion1;
+    private javax.swing.JLabel labelFechaDeteccion2;
+    private javax.swing.JLabel labelFechaDeteccion3;
+    private javax.swing.JLabel labelID;
+    private javax.swing.JLabel labelID1;
+    private javax.swing.JLabel labelID2;
+    private javax.swing.JLabel labelID3;
+    private javax.swing.JLabel labelIntentosAcceso;
+    private javax.swing.JLabel labelIntentosAcceso1;
+    private javax.swing.JLabel labelNivelRiesgo1;
+    private javax.swing.JLabel labelNivelRiesgo2;
+    private javax.swing.JLabel labelNivelRiesgo3;
+    private javax.swing.JLabel labelPrincipal;
+    private javax.swing.JLabel labelPuntoAcceso;
+    private javax.swing.JLabel labelPuntoAcceso1;
+    private javax.swing.JLabel labelRB;
+    private javax.swing.JLabel labelRBI;
+    private javax.swing.JLabel labelRD;
+    private javax.swing.JLabel labelRDI;
+    private javax.swing.JLabel labelREI1;
+    private javax.swing.JLabel labelREI2;
+    private javax.swing.JLabel labelRES;
+    private javax.swing.JLabel labelRNE;
+    private javax.swing.JLabel labelTipoAmenaza;
+    private javax.swing.JLabel labelTipoAmenaza1;
+    private javax.swing.JLabel labelTipoAmenaza2;
+    private javax.swing.JLabel labelTipoAmenaza3;
+    private javax.swing.JLabel lableDescripcion;
+    private javax.swing.JLabel lableDescripcion1;
+    private javax.swing.JLabel lableDescripcion2;
+    private javax.swing.JLabel lableDescripcion3;
+    private javax.swing.JLabel panelMenu;
+    private javax.swing.JButton registrarNuevoEvento;
+    private javax.swing.JButton salir;
+    private javax.swing.JButton siguiente1;
+    private javax.swing.JButton simple;
+    private javax.swing.JTextField textDescripcion;
+    private javax.swing.JTextField textDescripcion1;
+    private javax.swing.JTextField textFechaDeteccion;
+    private javax.swing.JTextField textFechaDeteccion1;
+    private javax.swing.JTextField textFechaDeteccion2;
+    private javax.swing.JTextField textID;
+    private javax.swing.JTextField textID1;
+    private javax.swing.JTextField textID2;
+    private javax.swing.JTextField textTipoAmenaza;
+    private javax.swing.JTextField textTipoAmenaza1;
+    private javax.swing.JTextField textTipoAmenaza2;
+    private javax.swing.JButton volver1;
+    private javax.swing.JButton volver2;
+    private javax.swing.JButton volver3;
+    private javax.swing.JButton volver4;
+    private javax.swing.JButton volver5;
+    private javax.swing.JButton volver6;
+    private javax.swing.JButton volver7;
     // End of variables declaration//GEN-END:variables
 }
