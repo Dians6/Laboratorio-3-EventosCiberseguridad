@@ -35,6 +35,7 @@ public class MainJFrame extends javax.swing.JFrame {
         registrarNuevoEvento = new javax.swing.JButton();
         generarReporte = new javax.swing.JButton();
         consultarInformacion = new javax.swing.JButton();
+        cambiarEvento = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         salir = new javax.swing.JButton();
         panelMenu = new javax.swing.JLabel();
@@ -119,6 +120,11 @@ public class MainJFrame extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         jList2 = new javax.swing.JList<>();
         labelCI = new javax.swing.JLabel();
+        CambiarEventoActual = new javax.swing.JPanel();
+        confirmar = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jList3 = new javax.swing.JList<>();
+        labelPrincipal1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new java.awt.GridBagLayout());
@@ -151,6 +157,15 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         });
         MenuPrincipal.add(consultarInformacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, 220, 70));
+
+        cambiarEvento.setBorderPainted(false);
+        cambiarEvento.setContentAreaFilled(false);
+        cambiarEvento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cambiarEventoActionPerformed(evt);
+            }
+        });
+        MenuPrincipal.add(cambiarEvento, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 363, 230, 70));
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
@@ -368,6 +383,7 @@ public class MainJFrame extends javax.swing.JFrame {
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
+        jList1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane1.setViewportView(jList1);
 
         GenerarReporte.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 130, 470, 340));
@@ -638,6 +654,7 @@ public class MainJFrame extends javax.swing.JFrame {
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
+        jList2.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane2.setViewportView(jList2);
 
         ConsultarInfo.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 80, 450, 420));
@@ -646,6 +663,33 @@ public class MainJFrame extends javax.swing.JFrame {
         ConsultarInfo.add(labelCI, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jTabbedPane1.addTab("tab1", ConsultarInfo);
+
+        CambiarEventoActual.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        confirmar.setBorderPainted(false);
+        confirmar.setContentAreaFilled(false);
+        confirmar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                confirmarActionPerformed(evt);
+            }
+        });
+        CambiarEventoActual.add(confirmar, new org.netbeans.lib.awtextra.AbsoluteConstraints(595, 543, 170, 50));
+
+        jList3.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jList3.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jList3.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jScrollPane3.setViewportView(jList3);
+
+        CambiarEventoActual.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 80, 470, 440));
+
+        labelPrincipal1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cambiarEventoActual.png"))); // NOI18N
+        CambiarEventoActual.add(labelPrincipal1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        jTabbedPane1.addTab("tab1", CambiarEventoActual);
 
         MenuPrincipal.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -35, 800, 635));
 
@@ -759,6 +803,15 @@ public class MainJFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_aislarSistemaActionPerformed
 
+    private void cambiarEventoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cambiarEventoActionPerformed
+        JTabbedPane tabbedPane = (JTabbedPane) this.jTabbedPane1;
+        tabbedPane.setSelectedComponent(CambiarEventoActual);
+    }//GEN-LAST:event_cambiarEventoActionPerformed
+
+    private void confirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_confirmarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -785,6 +838,7 @@ public class MainJFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel CambiarEventoActual;
     private javax.swing.JPanel ConsultarInfo;
     private javax.swing.JPanel GenerarReporte;
     private javax.swing.JPanel MenuPrincipal;
@@ -801,6 +855,8 @@ public class MainJFrame extends javax.swing.JFrame {
     private javax.swing.JButton analizarImpacto;
     private javax.swing.JButton basico;
     private javax.swing.JButton bloquearImpacto;
+    private javax.swing.JButton cambiarEvento;
+    private javax.swing.JButton confirmar;
     private javax.swing.JButton consultarInformacion;
     private javax.swing.JButton crear1;
     private javax.swing.JButton crear2;
@@ -813,8 +869,10 @@ public class MainJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JList<String> jList1;
     private javax.swing.JList<String> jList2;
+    private javax.swing.JList<String> jList3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JLabel labelCI;
     private javax.swing.JLabel labelEvaluacionRiesgo;
@@ -832,6 +890,7 @@ public class MainJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel labelNivelRiesgo2;
     private javax.swing.JLabel labelNivelRiesgo3;
     private javax.swing.JLabel labelPrincipal;
+    private javax.swing.JLabel labelPrincipal1;
     private javax.swing.JLabel labelPuntoAcceso;
     private javax.swing.JLabel labelPuntoAcceso1;
     private javax.swing.JLabel labelRB;
