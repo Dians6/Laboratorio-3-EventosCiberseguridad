@@ -3,15 +3,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package vista;
-
-import javax.swing.JTabbedPane;
+import controlador.Controladora;
 
 /**
  *
  * @author Personal
  */
 public class MainJFrame extends javax.swing.JFrame {
-    
+    private Controladora control;
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(MainJFrame.class.getName());
 
     /**
@@ -19,6 +18,18 @@ public class MainJFrame extends javax.swing.JFrame {
      */
     public MainJFrame() {
         initComponents();
+        control = new controlador.Controladora();
+
+        //para pcultar pestanas
+        jTabbedPane1.setUI(new javax.swing.plaf.basic.BasicTabbedPaneUI() {
+            @Override
+            protected int calculateTabAreaHeight(int tabPlacement, int runCount, int maxTabHeight) {
+                return 0;
+            }
+        });
+
+        // ir a la pantalla inicial
+        control.cambiarPantalla(jTabbedPane1, RegistrarNuevoEvento);
     }
 
     /**
@@ -51,7 +62,7 @@ public class MainJFrame extends javax.swing.JFrame {
         textTipoAmenaza = new javax.swing.JTextField();
         textFechaDeteccion = new javax.swing.JTextField();
         textDescripcion = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        cmbNivelRiesgoSimple = new javax.swing.JComboBox<>();
         volver1 = new javax.swing.JButton();
         crear1 = new javax.swing.JButton();
         labelRES = new javax.swing.JLabel();
@@ -60,20 +71,20 @@ public class MainJFrame extends javax.swing.JFrame {
         textTipoAmenaza1 = new javax.swing.JTextField();
         textFechaDeteccion1 = new javax.swing.JTextField();
         textDescripcion1 = new javax.swing.JTextField();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        cboNivelRiesgoIntrusion = new javax.swing.JComboBox<>();
         volver2 = new javax.swing.JButton();
         siguiente1 = new javax.swing.JButton();
         labelREI1 = new javax.swing.JLabel();
         RegistrarEventoIntrusion2 = new javax.swing.JPanel();
-        textID2 = new javax.swing.JTextField();
-        textTipoAmenaza2 = new javax.swing.JTextField();
-        textFechaDeteccion2 = new javax.swing.JTextField();
+        textPuntoAcceso = new javax.swing.JTextField();
+        textIntentosAcceso = new javax.swing.JTextField();
+        textUsuarioAfectado = new javax.swing.JTextField();
         volver3 = new javax.swing.JButton();
         crear2 = new javax.swing.JButton();
         labelREI2 = new javax.swing.JLabel();
         GenerarReporte = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
+        listaEventosGenerarReporte = new javax.swing.JList<>();
         basico = new javax.swing.JButton();
         detallado = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -107,10 +118,11 @@ public class MainJFrame extends javax.swing.JFrame {
         labelPuntoAcceso1 = new javax.swing.JLabel();
         labelTipoAmenaza3 = new javax.swing.JLabel();
         labelNivelRiesgo3 = new javax.swing.JLabel();
+        labelEvaluRiesgo = new javax.swing.JLabel();
         labelFechaDeteccion3 = new javax.swing.JLabel();
         labelIntentosAcceso1 = new javax.swing.JLabel();
-        lableDescripcion3 = new javax.swing.JLabel();
-        labelEvaluacionRiesgo1 = new javax.swing.JLabel();
+        lableNivelPersistencia = new javax.swing.JLabel();
+        labelDescripcion3 = new javax.swing.JLabel();
         volver7 = new javax.swing.JButton();
         labelRDI = new javax.swing.JLabel();
         ConsultarInfo = new javax.swing.JPanel();
@@ -118,12 +130,12 @@ public class MainJFrame extends javax.swing.JFrame {
         bloquearImpacto = new javax.swing.JButton();
         aislarSistema = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jList2 = new javax.swing.JList<>();
+        listaConsultarEventos = new javax.swing.JList<>();
         labelCI = new javax.swing.JLabel();
         CambiarEventoActual = new javax.swing.JPanel();
         confirmar = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jList3 = new javax.swing.JList<>();
+        listaEventosCambiar = new javax.swing.JList<>();
         labelPrincipal1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -229,6 +241,8 @@ public class MainJFrame extends javax.swing.JFrame {
         labelRNE.getAccessibleContext().setAccessibleName("labelRNE");
 
         jTabbedPane1.addTab("tab1", RegistrarNuevoEvento);
+        RegistrarNuevoEvento.getAccessibleContext().setAccessibleName("");
+        RegistrarNuevoEvento.getAccessibleContext().setAccessibleDescription("");
 
         RegistrarEventoSimple.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -255,9 +269,9 @@ public class MainJFrame extends javax.swing.JFrame {
         textDescripcion.setMaximumSize(new java.awt.Dimension(240, 130));
         RegistrarEventoSimple.add(textDescripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 390, 240, 130));
 
-        jComboBox1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3" }));
-        RegistrarEventoSimple.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(512, 282, 240, 40));
+        cmbNivelRiesgoSimple.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        cmbNivelRiesgoSimple.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3" }));
+        RegistrarEventoSimple.add(cmbNivelRiesgoSimple, new org.netbeans.lib.awtextra.AbsoluteConstraints(512, 282, 240, 40));
 
         volver1.setBorderPainted(false);
         volver1.setContentAreaFilled(false);
@@ -308,9 +322,9 @@ public class MainJFrame extends javax.swing.JFrame {
         textDescripcion1.setMaximumSize(new java.awt.Dimension(240, 130));
         RegistrarEventoIntrusion1.add(textDescripcion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 390, 240, 130));
 
-        jComboBox2.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3" }));
-        RegistrarEventoIntrusion1.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(512, 282, 240, 40));
+        cboNivelRiesgoIntrusion.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        cboNivelRiesgoIntrusion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3" }));
+        RegistrarEventoIntrusion1.add(cboNivelRiesgoIntrusion, new org.netbeans.lib.awtextra.AbsoluteConstraints(512, 282, 240, 40));
 
         volver2.setBorderPainted(false);
         volver2.setContentAreaFilled(false);
@@ -337,20 +351,20 @@ public class MainJFrame extends javax.swing.JFrame {
 
         RegistrarEventoIntrusion2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        textID2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        textID2.setForeground(new java.awt.Color(255, 255, 255));
-        textID2.setBorder(null);
-        RegistrarEventoIntrusion2.add(textID2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 190, 250, 20));
+        textPuntoAcceso.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        textPuntoAcceso.setForeground(new java.awt.Color(255, 255, 255));
+        textPuntoAcceso.setBorder(null);
+        RegistrarEventoIntrusion2.add(textPuntoAcceso, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 190, 250, 20));
 
-        textTipoAmenaza2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        textTipoAmenaza2.setForeground(new java.awt.Color(255, 255, 255));
-        textTipoAmenaza2.setBorder(null);
-        RegistrarEventoIntrusion2.add(textTipoAmenaza2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 248, 250, 20));
+        textIntentosAcceso.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        textIntentosAcceso.setForeground(new java.awt.Color(255, 255, 255));
+        textIntentosAcceso.setBorder(null);
+        RegistrarEventoIntrusion2.add(textIntentosAcceso, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 248, 250, 20));
 
-        textFechaDeteccion2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        textFechaDeteccion2.setForeground(new java.awt.Color(255, 255, 255));
-        textFechaDeteccion2.setBorder(null);
-        RegistrarEventoIntrusion2.add(textFechaDeteccion2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 303, 250, 20));
+        textUsuarioAfectado.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        textUsuarioAfectado.setForeground(new java.awt.Color(255, 255, 255));
+        textUsuarioAfectado.setBorder(null);
+        RegistrarEventoIntrusion2.add(textUsuarioAfectado, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 303, 250, 20));
 
         volver3.setBorderPainted(false);
         volver3.setContentAreaFilled(false);
@@ -377,14 +391,14 @@ public class MainJFrame extends javax.swing.JFrame {
 
         GenerarReporte.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jList1.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
+        listaEventosGenerarReporte.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        listaEventosGenerarReporte.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jList1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        jScrollPane1.setViewportView(jList1);
+        listaEventosGenerarReporte.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jScrollPane1.setViewportView(listaEventosGenerarReporte);
 
         GenerarReporte.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 130, 470, 340));
 
@@ -561,13 +575,13 @@ public class MainJFrame extends javax.swing.JFrame {
         labelID3.setForeground(new java.awt.Color(255, 255, 255));
         labelID3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelID3.setText("000");
-        ReporteDetalladoIntrusion.add(labelID3, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 137, 240, 20));
+        ReporteDetalladoIntrusion.add(labelID3, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 130, 240, 30));
 
         labelPuntoAcceso1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         labelPuntoAcceso1.setForeground(new java.awt.Color(255, 255, 255));
         labelPuntoAcceso1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelPuntoAcceso1.setText("000.000.000");
-        ReporteDetalladoIntrusion.add(labelPuntoAcceso1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 180, 240, 20));
+        ReporteDetalladoIntrusion.add(labelPuntoAcceso1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 180, 240, 30));
 
         labelTipoAmenaza3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         labelTipoAmenaza3.setForeground(new java.awt.Color(255, 255, 255));
@@ -575,11 +589,17 @@ public class MainJFrame extends javax.swing.JFrame {
         labelTipoAmenaza3.setText("TIPO");
         ReporteDetalladoIntrusion.add(labelTipoAmenaza3, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 230, 240, 20));
 
-        labelNivelRiesgo3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        labelNivelRiesgo3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         labelNivelRiesgo3.setForeground(new java.awt.Color(255, 255, 255));
         labelNivelRiesgo3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelNivelRiesgo3.setText("0");
-        ReporteDetalladoIntrusion.add(labelNivelRiesgo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 274, 240, 20));
+        ReporteDetalladoIntrusion.add(labelNivelRiesgo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 270, 200, 30));
+
+        labelEvaluRiesgo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        labelEvaluRiesgo.setForeground(new java.awt.Color(255, 255, 255));
+        labelEvaluRiesgo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelEvaluRiesgo.setText("0");
+        ReporteDetalladoIntrusion.add(labelEvaluRiesgo, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 274, 50, 20));
 
         labelFechaDeteccion3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         labelFechaDeteccion3.setForeground(new java.awt.Color(255, 255, 255));
@@ -591,19 +611,19 @@ public class MainJFrame extends javax.swing.JFrame {
         labelIntentosAcceso1.setForeground(new java.awt.Color(255, 255, 255));
         labelIntentosAcceso1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelIntentosAcceso1.setText("0");
-        ReporteDetalladoIntrusion.add(labelIntentosAcceso1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 360, 240, 20));
+        ReporteDetalladoIntrusion.add(labelIntentosAcceso1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 360, 240, 30));
 
-        lableDescripcion3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lableDescripcion3.setForeground(new java.awt.Color(255, 255, 255));
-        lableDescripcion3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lableDescripcion3.setText("no hay nivel");
-        ReporteDetalladoIntrusion.add(lableDescripcion3, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 410, 240, 20));
+        lableNivelPersistencia.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lableNivelPersistencia.setForeground(new java.awt.Color(255, 255, 255));
+        lableNivelPersistencia.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lableNivelPersistencia.setText("no hay nivel");
+        ReporteDetalladoIntrusion.add(lableNivelPersistencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 400, 240, 40));
 
-        labelEvaluacionRiesgo1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        labelEvaluacionRiesgo1.setForeground(new java.awt.Color(255, 255, 255));
-        labelEvaluacionRiesgo1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelEvaluacionRiesgo1.setText("no hay descripcion");
-        ReporteDetalladoIntrusion.add(labelEvaluacionRiesgo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 450, 210, 80));
+        labelDescripcion3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        labelDescripcion3.setForeground(new java.awt.Color(255, 255, 255));
+        labelDescripcion3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelDescripcion3.setText("no hay descripcion");
+        ReporteDetalladoIntrusion.add(labelDescripcion3, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 450, 210, 80));
 
         volver7.setBorderPainted(false);
         volver7.setContentAreaFilled(false);
@@ -648,14 +668,14 @@ public class MainJFrame extends javax.swing.JFrame {
         });
         ConsultarInfo.add(aislarSistema, new org.netbeans.lib.awtextra.AbsoluteConstraints(635, 533, 130, 60));
 
-        jList2.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jList2.setModel(new javax.swing.AbstractListModel<String>() {
+        listaConsultarEventos.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        listaConsultarEventos.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jList2.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        jScrollPane2.setViewportView(jList2);
+        listaConsultarEventos.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jScrollPane2.setViewportView(listaConsultarEventos);
 
         ConsultarInfo.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 80, 450, 420));
 
@@ -675,14 +695,14 @@ public class MainJFrame extends javax.swing.JFrame {
         });
         CambiarEventoActual.add(confirmar, new org.netbeans.lib.awtextra.AbsoluteConstraints(595, 543, 170, 50));
 
-        jList3.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jList3.setModel(new javax.swing.AbstractListModel<String>() {
+        listaEventosCambiar.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        listaEventosCambiar.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jList3.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        jScrollPane3.setViewportView(jList3);
+        listaEventosCambiar.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jScrollPane3.setViewportView(listaEventosCambiar);
 
         CambiarEventoActual.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 80, 470, 440));
 
@@ -703,113 +723,144 @@ public class MainJFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void registrarNuevoEventoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarNuevoEventoActionPerformed
-        JTabbedPane tabbedPane = (JTabbedPane) this.jTabbedPane1;
-        tabbedPane.setSelectedComponent(RegistrarNuevoEvento);
+        control.irARegistrar(jTabbedPane1, RegistrarNuevoEvento);
     }//GEN-LAST:event_registrarNuevoEventoActionPerformed
 
     private void generarReporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generarReporteActionPerformed
-        JTabbedPane tabbedPane = (JTabbedPane) this.jTabbedPane1;
-        tabbedPane.setSelectedComponent(GenerarReporte);
+        control.irAReportes(jTabbedPane1,GenerarReporte,listaEventosGenerarReporte);
     }//GEN-LAST:event_generarReporteActionPerformed
 
     private void consultarInformacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultarInformacionActionPerformed
-        JTabbedPane tabbedPane = (JTabbedPane) this.jTabbedPane1;
-        tabbedPane.setSelectedComponent(ConsultarInfo);
+        control.irAConsultarInformacion(jTabbedPane1, ConsultarInfo, listaConsultarEventos);
     }//GEN-LAST:event_consultarInformacionActionPerformed
 
     private void salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirActionPerformed
-        System.exit(0);
+        control.salirDelSistema();
     }//GEN-LAST:event_salirActionPerformed
 
     private void simpleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simpleActionPerformed
-        JTabbedPane tabbedPane = (JTabbedPane) this.jTabbedPane1;
-        tabbedPane.setSelectedComponent(RegistrarEventoSimple);
+        control.cambiarPantalla(jTabbedPane1, RegistrarEventoSimple);
     }//GEN-LAST:event_simpleActionPerformed
 
     private void intrusionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_intrusionActionPerformed
-        JTabbedPane tabbedPane = (JTabbedPane) this.jTabbedPane1;
-        tabbedPane.setSelectedComponent(RegistrarEventoIntrusion1);
+        control.cambiarPantalla(jTabbedPane1, RegistrarEventoIntrusion1);
     }//GEN-LAST:event_intrusionActionPerformed
 
     private void volver1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volver1ActionPerformed
-        JTabbedPane tabbedPane = (JTabbedPane) this.jTabbedPane1;
-        tabbedPane.setSelectedComponent(RegistrarNuevoEvento);
+        control.cambiarPantalla(jTabbedPane1, RegistrarNuevoEvento);
     }//GEN-LAST:event_volver1ActionPerformed
 
     private void crear1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crear1ActionPerformed
-        JTabbedPane tabbedPane = (JTabbedPane) this.jTabbedPane1;
-        tabbedPane.setSelectedComponent(RegistrarNuevoEvento);
+        control.registrarEventoSimple(
+            textID,          // jTextfield del ID
+            textTipoAmenaza,     // jtextfield del tipo de amenaza
+            cmbNivelRiesgoSimple, // jcombobox del nivel 
+            textFechaDeteccion,       // JTextField de Fecha
+            textDescripcion, // JTextField de Descripción
+            labelRES     // label azul del menu lateral (para actualizarlo al guardar)
+        );
     }//GEN-LAST:event_crear1ActionPerformed
 
     private void volver2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volver2ActionPerformed
-        JTabbedPane tabbedPane = (JTabbedPane) this.jTabbedPane1;
-        tabbedPane.setSelectedComponent(RegistrarNuevoEvento);
+        control.cambiarPantalla(jTabbedPane1, RegistrarNuevoEvento);
     }//GEN-LAST:event_volver2ActionPerformed
 
     private void siguiente1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_siguiente1ActionPerformed
-        JTabbedPane tabbedPane = (JTabbedPane) this.jTabbedPane1;
-        tabbedPane.setSelectedComponent(RegistrarEventoIntrusion2);
+        control.validarYPasarPaso2(
+            jTabbedPane1, 
+            RegistrarEventoIntrusion2,
+            textID1, textTipoAmenaza, textFechaDeteccion1, cboNivelRiesgoIntrusion, textDescripcion1
+        );
     }//GEN-LAST:event_siguiente1ActionPerformed
 
     private void volver3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volver3ActionPerformed
-        JTabbedPane tabbedPane = (JTabbedPane) this.jTabbedPane1;
-        tabbedPane.setSelectedComponent(RegistrarNuevoEvento);
+        control.cambiarPantalla(jTabbedPane1, RegistrarNuevoEvento);
     }//GEN-LAST:event_volver3ActionPerformed
 
     private void crear2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crear2ActionPerformed
-        JTabbedPane tabbedPane = (JTabbedPane) this.jTabbedPane1;
-        tabbedPane.setSelectedComponent(RegistrarNuevoEvento);
+        control.registrarIntrusionFinal(textID1,textTipoAmenaza,textFechaDeteccion1,cboNivelRiesgoIntrusion,textDescripcion1,textPuntoAcceso,textIntentosAcceso,textUsuarioAfectado,labelREI2);
+        control.cambiarPantalla(jTabbedPane1, RegistrarNuevoEvento);
     }//GEN-LAST:event_crear2ActionPerformed
 
     private void volver4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volver4ActionPerformed
-        JTabbedPane tabbedPane = (JTabbedPane) this.jTabbedPane1;
-        tabbedPane.setSelectedComponent(GenerarReporte);
+        control.cambiarPantalla(jTabbedPane1, GenerarReporte);
     }//GEN-LAST:event_volver4ActionPerformed
 
     private void basicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_basicoActionPerformed
-        JTabbedPane tabbedPane = (JTabbedPane) this.jTabbedPane1;
-        tabbedPane.setSelectedComponent(ReporteBasico);
+        control.gestionarReporteBasico(jTabbedPane1,listaEventosGenerarReporte,
+            ReporteBasicoIntrusion,
+            ReporteBasico,
+            
+            // los labels de intrusion
+            labelID1, 
+            labelTipoAmenaza, 
+            lableDescripcion1, 
+            labelFechaDeteccion1, 
+            labelIntentosAcceso, 
+            labelPuntoAcceso,
+            
+            //labels de evento seguridad simple
+            labelID, 
+            labelTipoAmenaza, 
+            lableDescripcion
+        );
     }//GEN-LAST:event_basicoActionPerformed
 
     private void detalladoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_detalladoActionPerformed
-        JTabbedPane tabbedPane = (JTabbedPane) this.jTabbedPane1;
-        tabbedPane.setSelectedComponent(ReporteDetallado);
+        control.gestionarReporteDetallado(jTabbedPane1,listaEventosGenerarReporte, 
+            ReporteDetalladoIntrusion,
+            ReporteDetallado,
+            
+            // labels de panel intrusion detallado
+            labelID3, 
+            labelTipoAmenaza3, 
+            lableNivelPersistencia, 
+            labelFechaDeteccion3, 
+            labelIntentosAcceso1, 
+            labelPuntoAcceso1, 
+            labelNivelRiesgo3, 
+            labelDescripcion3, 
+            labelEvaluRiesgo,
+            
+            // detallado simple
+            labelID2, 
+            labelTipoAmenaza2, 
+            labelNivelRiesgo2, 
+            labelEvaluacionRiesgo, 
+            labelFechaDeteccion2, 
+            lableDescripcion2
+        );
     }//GEN-LAST:event_detalladoActionPerformed
 
     private void volver5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volver5ActionPerformed
-        JTabbedPane tabbedPane = (JTabbedPane) this.jTabbedPane1;
-        tabbedPane.setSelectedComponent(GenerarReporte);
+        control.cambiarPantalla(jTabbedPane1, GenerarReporte);
     }//GEN-LAST:event_volver5ActionPerformed
 
     private void volver6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volver6ActionPerformed
-        JTabbedPane tabbedPane = (JTabbedPane) this.jTabbedPane1;
-        tabbedPane.setSelectedComponent(GenerarReporte);
-    }//GEN-LAST:event_volver6ActionPerformed
+        control.cambiarPantalla(jTabbedPane1, GenerarReporte);    }//GEN-LAST:event_volver6ActionPerformed
 
     private void volver7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volver7ActionPerformed
-        JTabbedPane tabbedPane = (JTabbedPane) this.jTabbedPane1;
-        tabbedPane.setSelectedComponent(GenerarReporte);
+       control.cambiarPantalla(jTabbedPane1, GenerarReporte);
     }//GEN-LAST:event_volver7ActionPerformed
 
     private void analizarImpactoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_analizarImpactoActionPerformed
-        // TODO add your handling code here:
+        control.gestionarAnalizarImpacto(listaConsultarEventos);
     }//GEN-LAST:event_analizarImpactoActionPerformed
 
     private void bloquearImpactoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bloquearImpactoActionPerformed
-        // TODO add your handling code here:
+        control.gestionarBloquearIP(listaConsultarEventos);
     }//GEN-LAST:event_bloquearImpactoActionPerformed
 
     private void aislarSistemaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aislarSistemaActionPerformed
-        // TODO add your handling code here:
+        control.gestionarAislarSistema(listaConsultarEventos);
     }//GEN-LAST:event_aislarSistemaActionPerformed
 
     private void cambiarEventoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cambiarEventoActionPerformed
-        JTabbedPane tabbedPane = (JTabbedPane) this.jTabbedPane1;
-        tabbedPane.setSelectedComponent(CambiarEventoActual);
+        control.irACambiarEventoActual(jTabbedPane1, CambiarEventoActual, listaEventosCambiar);
     }//GEN-LAST:event_cambiarEventoActionPerformed
 
     private void confirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmarActionPerformed
-        // TODO add your handling code here:
+        control.confirmarEventoActual(listaEventosCambiar, labelPrincipal1);
     }//GEN-LAST:event_confirmarActionPerformed
 
     /**
@@ -856,6 +907,8 @@ public class MainJFrame extends javax.swing.JFrame {
     private javax.swing.JButton basico;
     private javax.swing.JButton bloquearImpacto;
     private javax.swing.JButton cambiarEvento;
+    private javax.swing.JComboBox<String> cboNivelRiesgoIntrusion;
+    private javax.swing.JComboBox<String> cmbNivelRiesgoSimple;
     private javax.swing.JButton confirmar;
     private javax.swing.JButton consultarInformacion;
     private javax.swing.JButton crear1;
@@ -863,20 +916,16 @@ public class MainJFrame extends javax.swing.JFrame {
     private javax.swing.JButton detallado;
     private javax.swing.JButton generarReporte;
     private javax.swing.JButton intrusion;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JList<String> jList1;
-    private javax.swing.JList<String> jList2;
-    private javax.swing.JList<String> jList3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JLabel labelCI;
+    private javax.swing.JLabel labelDescripcion3;
+    private javax.swing.JLabel labelEvaluRiesgo;
     private javax.swing.JLabel labelEvaluacionRiesgo;
-    private javax.swing.JLabel labelEvaluacionRiesgo1;
     private javax.swing.JLabel labelFechaDeteccion1;
     private javax.swing.JLabel labelFechaDeteccion2;
     private javax.swing.JLabel labelFechaDeteccion3;
@@ -908,7 +957,10 @@ public class MainJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel lableDescripcion;
     private javax.swing.JLabel lableDescripcion1;
     private javax.swing.JLabel lableDescripcion2;
-    private javax.swing.JLabel lableDescripcion3;
+    private javax.swing.JLabel lableNivelPersistencia;
+    private javax.swing.JList<String> listaConsultarEventos;
+    private javax.swing.JList<String> listaEventosCambiar;
+    private javax.swing.JList<String> listaEventosGenerarReporte;
     private javax.swing.JLabel panelMenu;
     private javax.swing.JButton registrarNuevoEvento;
     private javax.swing.JButton salir;
@@ -918,13 +970,13 @@ public class MainJFrame extends javax.swing.JFrame {
     private javax.swing.JTextField textDescripcion1;
     private javax.swing.JTextField textFechaDeteccion;
     private javax.swing.JTextField textFechaDeteccion1;
-    private javax.swing.JTextField textFechaDeteccion2;
     private javax.swing.JTextField textID;
     private javax.swing.JTextField textID1;
-    private javax.swing.JTextField textID2;
+    private javax.swing.JTextField textIntentosAcceso;
+    private javax.swing.JTextField textPuntoAcceso;
     private javax.swing.JTextField textTipoAmenaza;
     private javax.swing.JTextField textTipoAmenaza1;
-    private javax.swing.JTextField textTipoAmenaza2;
+    private javax.swing.JTextField textUsuarioAfectado;
     private javax.swing.JButton volver1;
     private javax.swing.JButton volver2;
     private javax.swing.JButton volver3;
