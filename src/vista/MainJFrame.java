@@ -29,7 +29,7 @@ public class MainJFrame extends javax.swing.JFrame {
         });
 
         // ir a la pantalla inicial
-        control.cambiarPantalla(jTabbedPane1, RegistrarNuevoEvento);
+        //control.cambiarPantalla(jTabbedPane1, RegistrarNuevoEvento);
     }
 
     /**
@@ -139,6 +139,7 @@ public class MainJFrame extends javax.swing.JFrame {
         labelPrincipal1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
         getContentPane().setLayout(new java.awt.GridBagLayout());
 
         MenuPrincipal.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
