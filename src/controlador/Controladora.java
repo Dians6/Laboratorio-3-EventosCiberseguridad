@@ -20,7 +20,10 @@ public class Controladora {
     private EventoSeguridad eventoActual;
 
     public Controladora() {
-        this.listaEventos = new ArrayList<>();
+        this.listaEventos = GestorDatos.cargarDatos(); 
+        if (this.listaEventos == null) {
+            this.listaEventos = new ArrayList<>(); // si esta vacia la creamos (primera vez)
+        }
         this.eventoActual = null;
     }
     
@@ -181,7 +184,7 @@ public class Controladora {
             listaEventos.add(nuevo);
             this.eventoActual = nuevo;
             lblIDActualUI.setText(nuevo.getIdEvento());
-
+            GestorDatos.guardarDatos(listaEventos);
             JOptionPane.showMessageDialog(null, "Evento Simple Registrado y establecido como Actual.");
             
             txtID.setText(""); txtTipo.setText(""); txtDesc.setText(""); txtFecha.setText("");
@@ -215,7 +218,7 @@ public class Controladora {
             listaEventos.add(intrusion);
             this.eventoActual = intrusion;
             lblIDActualUI.setText(intrusion.getIdEvento());
-            
+            GestorDatos.guardarDatos(listaEventos);
             JOptionPane.showMessageDialog(null, "¡Intrusión registrada y establecida como actual!", "Éxito", JOptionPane.INFORMATION_MESSAGE);
             
             txtID.setText(""); txtTipo.setText(""); txtFecha.setText("");
