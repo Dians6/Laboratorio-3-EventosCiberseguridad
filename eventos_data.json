@@ -6,6 +6,13 @@
       "nivelRiesgo": 1,
       "fechaDeteccion": "11/11/2025",
       "descripcion": "hdhdhdhdhhdhdhd"
+    },
+    {
+      "idEvento": "111",
+      "tipoAmenaza": "mALWARE",
+      "nivelRiesgo": 1,
+      "fechaDeteccion": "11/01/2026",
+      "descripcion": "BALBLABLA"
     }
   ],
   "intrusiones": []
