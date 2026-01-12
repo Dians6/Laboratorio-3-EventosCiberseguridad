@@ -222,7 +222,7 @@ public class Controladora {
             this.eventoActual = nuevo;
             lblIDActualUI.setText(nuevo.getIdEvento());
             GestorDatos.guardarDatos(listaEventos);
-            JOptionPane.showMessageDialog(null, "Evento Simple Registrado y establecido como Actual.");
+            JOptionPane.showMessageDialog(null, "Evento Simple Registrado");
             txtID.setText(""); txtTipo.setText(""); txtDesc.setText(""); txtFecha.setText("");
             cmbNivel.setSelectedIndex(0);
 
@@ -259,7 +259,7 @@ public class Controladora {
             this.eventoActual = intrusion;
             lblIDActualUI.setText(intrusion.getIdEvento());
             GestorDatos.guardarDatos(listaEventos);
-            JOptionPane.showMessageDialog(null, "¡Intrusión registrada y establecida como actual!", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "¡Intrusión registrada!", "Éxito", JOptionPane.INFORMATION_MESSAGE);
 
             
 

@@ -5,15 +5,36 @@
       "tipoAmenaza": "dfjdjd",
       "nivelRiesgo": 1,
       "fechaDeteccion": "11/11/2025",
-      "descripcion": "hdhdhdhdhhdhdhd"
+      "descripcion": "hhdhahdhad"
     },
     {
-      "idEvento": "111",
-      "tipoAmenaza": "mALWARE",
+      "idEvento": "000111",
+      "tipoAmenaza": "MALWARE",
       "nivelRiesgo": 1,
       "fechaDeteccion": "11/01/2026",
-      "descripcion": "BALBLABLA"
+      "descripcion": "DASASDASD"
     }
   ],
-  "intrusiones": []
+  "intrusiones": [
+    {
+      "puntoAcceso": "a",
+      "intentosAcceso": 5,
+      "usuarioAfectado": "ant124",
+      "idEvento": "123123",
+      "tipoAmenaza": "amenaza",
+      "nivelRiesgo": 3,
+      "fechaDeteccion": "21/02/2025",
+      "descripcion": "dasdadad"
+    },
+    {
+      "puntoAcceso": "b",
+      "intentosAcceso": 13,
+      "usuarioAfectado": "a123",
+      "idEvento": "033696",
+      "tipoAmenaza": "alarmante",
+      "nivelRiesgo": 3,
+      "fechaDeteccion": "28/06/2025",
+      "descripcion": "dasdasd"
+    }
+  ]
 }

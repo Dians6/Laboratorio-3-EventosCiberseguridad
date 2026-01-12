@@ -14,6 +14,9 @@ import java.util.ArrayList;
 import javax.swing.DefaultListModel;
 import modelo.EventoIntrusion;
 import modelo.EventoSeguridad;
+import modelo.ImpactoCritico;
+import modelo.ImpactoInformativo;
+import modelo.ImpactoIntrusionAvanzada;
 
 
 public class EventoSeguridad {
@@ -23,6 +26,7 @@ public class EventoSeguridad {
     protected int nivelRiesgo; //1: Bajo - 2:Medio - 3: Alto
     protected LocalDate fechaDeteccion;
     protected String descripcion;
+    protected transient EstrategiaImpacto estrategia;
     
     public EventoSeguridad(){
         idEvento = "N/A";
@@ -30,6 +34,7 @@ public class EventoSeguridad {
         nivelRiesgo = 0;
         fechaDeteccion = null;
         descripcion = "N/A";
+        this.estrategia = new ImpactoInformativo();
     }
     
     public EventoSeguridad(String idEvento, String tipoAmenaza, int nivelRiesgo, LocalDate fechaDeteccion, String descripcion) {
@@ -38,8 +43,17 @@ public class EventoSeguridad {
         this.nivelRiesgo = nivelRiesgo;
         this.fechaDeteccion = fechaDeteccion;
         this.descripcion = descripcion;
+        this.definirEstrategiaAutomatica();
     }
-
+    
+    public void definirEstrategiaAutomatica() {
+        // Si el riesgo es 3 o más, es crítico. Si no, es informativo.
+        if (this.nivelRiesgo >= 3) {
+            this.estrategia = new ImpactoCritico();
+        } else {
+            this.estrategia = new ImpactoInformativo();
+        }
+    }
     public String getIdEvento() {
         return idEvento;
     }
@@ -100,19 +114,17 @@ public class EventoSeguridad {
         fecha.setText(fechaDeteccion.toString());
         descripcionJ.setText(descripcion);
     }
-    
-    public void analizarImpacto(){
-        switch (nivelRiesgo){
-            case 1->JOptionPane.showMessageDialog(null,"El nivel de riesgo es bajo. NO SE REQUIERE ACCION" , "Analisis de impacto", JOptionPane.INFORMATION_MESSAGE); 
-            case 2->JOptionPane.showMessageDialog(null,"El nivel de riesgo es medio. TOME SUS PRECAUCIONES" , "Analisis de impacto", JOptionPane.INFORMATION_MESSAGE);  
-            case 3->JOptionPane.showMessageDialog(null,"El nivel de riesgo es ALTO. ACCION INMEDIATA REQUERIDA" , "Analisis de impacto", JOptionPane.ERROR_MESSAGE); 
-            default->JOptionPane.showMessageDialog(null,"No hay nivel de Riesgo: Sin Amenaza Detectada" , "Analisis de impacto", JOptionPane.INFORMATION_MESSAGE); 
-        }
+    // Permitir cambiar la estrategia manualmente si es necesario (Setter)
+    public void setEstrategiaImpacto(EstrategiaImpacto nuevaEstrategia) {
+        this.estrategia = nuevaEstrategia;
     }
 
-   
-    
-    
-    
+    // Metodo cambiado por la implementacion del Strategy
+    public void analizarImpacto() {
+        // Ya no hay switch ni JOptionPane aquí. Delegamos.
+        if (estrategia != null) {
+            estrategia.ejecutarAnalisis(this);
+        }
+    }
     
 }

@@ -20,7 +20,9 @@ public class MainJFrame extends javax.swing.JFrame {
         System.setProperty("sun.java2d.noddraw", "true");
         initComponents();
         
+        
         control = new controlador.Controladora();
+        control.iniciaVentana(this, "src/imagenes/icono.png");
 
         jTabbedPane1.setUI(new javax.swing.plaf.basic.BasicTabbedPaneUI() {
         @Override

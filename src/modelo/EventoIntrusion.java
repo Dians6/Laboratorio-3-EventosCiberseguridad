@@ -16,13 +16,39 @@ public class EventoIntrusion extends EventoSeguridad{
     private int intentosAcceso;
     private String usuarioAfectado;
     
+    public String getPuntoAcceso() {
+        return puntoAcceso;
+    }
+
+    public void setPuntoAcceso(String puntoAcceso) {
+        this.puntoAcceso = puntoAcceso;
+    }
+
+    public int getIntentosAcceso() {
+        return intentosAcceso;
+    }
+
+    public void setIntentosAcceso(int intentosAcceso) {
+        this.intentosAcceso = intentosAcceso;
+    }
+
+    public String getUsuarioAfectado() {
+        return usuarioAfectado;
+    }
+
     //!!!!!!!!!!!
-    
+    public void setUsuarioAfectado(String usuarioAfectado) {    
+        this.usuarioAfectado = usuarioAfectado;
+    }
+
     public EventoIntrusion(String idEvento, String tipoAmenaza, int nivelRiesgo, LocalDate fechaDeteccion, String descripcion, String puntoAcceso, int intentosAcceso, String usuarioAfectado) {
         super(idEvento, tipoAmenaza, nivelRiesgo, fechaDeteccion, descripcion);
         this.puntoAcceso = puntoAcceso;
         this.intentosAcceso = intentosAcceso;
         this.usuarioAfectado = usuarioAfectado; 
+        if (this.nivelRiesgo == 3 && this.intentosAcceso > 10) {
+            this.setEstrategiaImpacto(new modelo.ImpactoIntrusionAvanzada());
+        }
     }
     
     public EventoIntrusion() {
@@ -109,15 +135,6 @@ public class EventoIntrusion extends EventoSeguridad{
 
     }
    
-    @Override
-    public void analizarImpacto(){
-        super.analizarImpacto();
-        //si se superan los 10 intentos y el nivel de riesgo es alto alerta critica
-        if ((nivelRiesgo == 3) && (intentosAcceso >= 10)){
-            JOptionPane.showMessageDialog(null,"ALERTA CRITICA: Posible compromiso del sistema" , "Analisis de impacto", JOptionPane.INFORMATION_MESSAGE); 
-
-        }
-    }
    
     
 }
