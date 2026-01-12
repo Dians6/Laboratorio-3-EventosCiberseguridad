@@ -779,7 +779,7 @@ public class MainJFrame extends javax.swing.JFrame {
         control.validarYPasarPaso2(
             jTabbedPane1, 
             RegistrarEventoIntrusion2,
-            textID1, textTipoAmenaza, textFechaDeteccion1, cboNivelRiesgoIntrusion, textDescripcion1
+            textID1, textTipoAmenaza1, textFechaDeteccion1, cboNivelRiesgoIntrusion, textDescripcion1
         );
     }//GEN-LAST:event_siguiente1ActionPerformed
 
@@ -788,7 +788,7 @@ public class MainJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_volver3ActionPerformed
 
     private void crear2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crear2ActionPerformed
-        control.registrarIntrusionFinal(textID1,textTipoAmenaza,textFechaDeteccion1,cboNivelRiesgoIntrusion,textDescripcion1,textPuntoAcceso,textIntentosAcceso,textUsuarioAfectado,labelREI2);
+        control.registrarIntrusionFinal(textID1,textTipoAmenaza1,textFechaDeteccion1,cboNivelRiesgoIntrusion,textDescripcion1,textPuntoAcceso,textIntentosAcceso,textUsuarioAfectado,labelREI2);
         control.cambiarPantalla(jTabbedPane1, RegistrarNuevoEvento);
     }//GEN-LAST:event_crear2ActionPerformed
 
